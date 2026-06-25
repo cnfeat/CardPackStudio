@@ -11,6 +11,52 @@ CardPack Studio 是一个开放卡片创作平台，致力于：
 - **终身学习工具**：为终身学习者提供结构化学习工具
 - **创作方法论**：推广卡片创作法，提升内容创作效率
 
+## 🔗 与日问一问插件关联
+
+CardPack Studio 与 [日问一问插件](https://github.com/cnfeat/DailyQApk) 深度集成，形成完整的卡片生态系统：
+
+### 🔄 工作流程
+
+1. **内容创作** → 在 CardPack Studio 中创作卡包
+2. **格式转换** → 生成 JSON 格式的卡包文件
+3. **插件应用** → 导入日问一问插件进行日常使用
+4. **反馈优化** → 使用反馈 → 内容优化
+
+### 📦 卡包格式兼容
+
+CardPack Studio 生成的 JSON 文件完全兼容日问一问插件：
+
+```json
+{
+  "id": "001",
+  "question": "在AI时代，创业成功的关键到底变成了什么？",
+  "extension": "你个人觉得，自己现在最需要提升的能力是什么？当AI系统能力超过你的个人认知时，你如何确保自己发出的指令是正确的？你的判断力跟得上AI的执行力吗？",
+  "domain": "事业与财富",
+  "dimension": ["行动决策"],
+  "depth": 2
+}
+```
+
+### 🚀 使用方法
+
+#### 1. 下载卡包
+```bash
+git clone https://github.com/cnfeat/CardPackStudio.git
+cd CardPackStudio/cardpacks/ai-decision
+# 获取 AI创业决策卡包 JSON 文件
+```
+
+#### 2. 导入插件
+1. 下载 [日问一问插件](https://github.com/cnfeat/DailyQApk)
+2. 将 JSON 文件导入插件
+3. 日常使用进行决策思考
+
+#### 3. 插件特性
+- **双层结构**：问题层 + 扩展层
+- **多维度标签**：领域、维度分类
+- **日常提醒**：每日决策思考
+- **数据统计**：使用习惯分析
+
 ## 📁 项目结构
 
 ```
@@ -31,6 +77,8 @@ CardPack Studio/
 │   ├── creation-guide/         # 卡片创作指南
 │   ├── distribution/           # 分发指南
 │   └── examples/               # 示例卡包
+├── plugins/                     # 插件集成
+│   └── daily-question/         # 日问一问插件仓库
 └── platform/                    # 平台代码
     ├── web/                    # 网站展示
     ├── api/                    # API接口
@@ -53,8 +101,14 @@ cd cardpacks/ai-decision
 
 ### 3. 使用卡包
 - **PDF格式**：直接下载阅读
-- **插件格式**：导入日课一问插件
+- **插件格式**：导入日问一问插件
 - **Web格式**：在线浏览和分享
+
+### 4. 关联插件
+```bash
+cd plugins/daily-question
+# 查看日问一问插件源码
+```
 
 ## 📦 卡包列表
 
@@ -81,7 +135,7 @@ cd cardpacks/ai-decision
 - 批量生成和导出
 
 ### 插件适配工具
-- 自动适配日课一问插件格式
+- 自动适配日问一问插件格式
 - 格式验证和错误检查
 - 插件包生成和发布
 
@@ -116,6 +170,7 @@ cd cardpacks/ai-decision
 - **GitHub**：https://github.com/cnfeat/CardPackStudio
 - **作者**：cnfeat
 - **个人网站**：https://www.cnfeat.com
+- **日问一问插件**：https://github.com/cnfeat/DailyQApk
 
 ## 📄 许可证
 
