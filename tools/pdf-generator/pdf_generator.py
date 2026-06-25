@@ -16,7 +16,7 @@ def load_questions(json_file):
         data = json.load(f)
     return data
 
-def generate_html(questions, template_file=None):
+def generate_html(questions, title="CardPack Studio", subtitle="知识卡片集合", template_file=None):
     """生成HTML内容"""
     if template_file and os.path.exists(template_file):
         with open(template_file, 'r', encoding='utf-8') as f:
@@ -26,7 +26,7 @@ def generate_html(questions, template_file=None):
         # 使用默认模板
         template = Template(get_default_template())
     
-    html_content = template.render(questions=questions)
+    html_content = template.render(questions=questions, title=title, subtitle=subtitle)
     return html_content
 
 def get_default_template():

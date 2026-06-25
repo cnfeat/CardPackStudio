@@ -1,0 +1,3 @@
+[submodule "plugins/daily-question"]
+	path = plugins/daily-question
+	url = https://github.com/cnfeat/DailyQApk.git

@@ -47,8 +47,8 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific
-*.pdf
-*.html
+# 保留卡包PDF文件，忽略临时PDF
+# !cardpacks/**/*.pdf
 temp/
 tmp/
 output/
