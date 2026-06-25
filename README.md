@@ -13,13 +13,13 @@ CardPack Studio 是一个开放卡片创作平台，致力于：
 
 ## 🔗 与日问一问插件关联
 
-CardPack Studio 与 [日问一问插件](https://github.com/cnfeat/DailyQApk) 深度集成，形成完整的卡片生态系统：
+CardPack Studio 与 [日课一问插件](https://github.com/cnfeat/DailyQApk) 深度集成，形成完整的卡片生态系统：
 
 ### 🔄 工作流程
 
 1. **内容创作** → 在 CardPack Studio 中创作卡包
 2. **格式转换** → 生成 JSON 格式的卡包文件
-3. **插件应用** → 导入日问一问插件进行日常使用
+3. **插件应用** → 导入日课一问插件进行日常使用
 4. **反馈优化** → 使用反馈 → 内容优化
 
 ### 📦 卡包格式兼容
@@ -47,8 +47,8 @@ cd CardPackStudio/cardpacks/ai-decision
 ```
 
 #### 2. 导入插件
-1. 下载 [日问一问插件](https://github.com/cnfeat/DailyQApk)
-2. 将 JSON 文件导入插件
+1. 下载 [日课一问插件](https://github.com/cnfeat/DailyQApk)
+2. 将 JSON 文件导入日课一问插件
 3. 日常使用进行决策思考
 
 #### 3. 插件特性
@@ -170,7 +170,7 @@ cd plugins/daily-question
 - **GitHub**：https://github.com/cnfeat/CardPackStudio
 - **作者**：cnfeat
 - **个人网站**：https://www.cnfeat.com
-- **日问一问插件**：https://github.com/cnfeat/DailyQApk
+- **日课一问插件**：https://github.com/cnfeat/DailyQApk
 
 ## 📄 许可证
 
