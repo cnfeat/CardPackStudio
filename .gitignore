@@ -61,6 +61,11 @@ logs/
 # WorkBuddy
 .workbuddy/
 
+# Cardpack process folders (keep local, not in repo)
+cardpacks/*/decisions/
+cardpacks/*/process/
+cardpacks/*/prototypes/
+
 # Cache
 .cache/
 *.cache
