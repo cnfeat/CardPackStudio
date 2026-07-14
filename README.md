@@ -1,185 +1,59 @@
 # CardPack Studio
 
-> 开放卡片创作平台 - 终身学习者的知识管理与内容分发生态
+> 卡片创作实验室 · 把零散的知识变成鲜活的产品
 
-## 🎯 项目定位
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![CC BY-NC-SA 4.0](https://img.shields.io/badge/卡包许可-CC%20BY--NC--SA%204.0-blue)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-CardPack Studio 是一个开放卡片创作平台，致力于：
+CardPack Studio 是「卡片创作法」的产物仓库。每个卡包是一套精心设计的问题卡片，用结构化提问引导用户思考、记录、创作。
 
-- **个人知识管理**：通过卡片创作法系统化整理知识
-- **内容分发生态**：多格式输出（PDF、插件、Web）分享知识
-- **终身学习工具**：为终身学习者提供结构化学习工具
-- **创作方法论**：推广卡片创作法，提升内容创作效率
-
-## 🔗 与日问一问插件关联
-
-CardPack Studio 与 [日课一问插件](https://github.com/cnfeat/DailyQApk) 深度集成，形成完整的卡片生态系统：
-
-### 🔄 工作流程
-
-1. **内容创作** → 在 CardPack Studio 中创作卡包
-2. **格式转换** → 生成 JSON 格式的卡包文件
-3. **插件应用** → 导入日课一问插件进行日常使用
-4. **反馈优化** → 使用反馈 → 内容优化
-
-### 📦 卡包格式兼容
-
-CardPack Studio 生成的 JSON 文件完全兼容日问一问插件：
-
-```json
-{
-  "id": "001",
-  "question": "在AI时代，创业成功的关键到底变成了什么？",
-  "extension": "你个人觉得，自己现在最需要提升的能力是什么？当AI系统能力超过你的个人认知时，你如何确保自己发出的指令是正确的？你的判断力跟得上AI的执行力吗？",
-  "domain": "事业与财富",
-  "dimension": ["行动决策"],
-  "depth": 2
-}
-```
-
-### 🚀 使用方法
-
-#### 1. 下载卡包
-```bash
-git clone https://github.com/cnfeat/CardPackStudio.git
-cd CardPackStudio/cardpacks/ai-decision
-# 获取 AI创业决策卡包 JSON 文件
-```
-
-#### 2. 导入插件
-1. 下载 [日课一问插件](https://github.com/cnfeat/DailyQApk)
-2. 将 JSON 文件导入日课一问插件
-3. 日常使用进行决策思考
-
-#### 3. 插件特性
-- **双层结构**：问题层 + 扩展层
-- **多维度标签**：领域、维度分类
-- **日常提醒**：每日决策思考
-- **数据统计**：使用习惯分析
-
-## 📁 项目结构
-
-```
-CardPack Studio/
-├── README.md                    # 项目说明
-├── LICENSE                      # 开源许可证
-├── CONTRIBUTING.md              # 贡献指南
-├── cardpacks/                   # 卡包集合
-│   ├── ai-decision/             # AI创业决策卡包
-│   ├── productivity/           # 个人生产力卡包
-│   ├── learning/                # 学习方法卡包
-│   └── ...
-├── tools/                       # 工具脚本
-│   ├── pdf-generator/           # PDF生成工具
-│   ├── plugin-adapter/         # 插件适配工具
-│   └── quality-check/           # 质量检查工具
-├── docs/                        # 文档
-│   ├── creation-guide/         # 卡片创作指南
-│   ├── distribution/           # 分发指南
-│   └── examples/               # 示例卡包
-├── plugins/                     # 插件集成
-│   └── daily-question/         # 日问一问插件仓库
-└── platform/                    # 平台代码
-    ├── web/                    # 网站展示
-    ├── api/                    # API接口
-    └── community/             # 社区功能
-```
-
-## 🚀 快速开始
-
-### 1. 克隆仓库
-```bash
-git clone https://github.com/cnfeat/CardPackStudio.git
-cd CardPackStudio
-```
-
-### 2. 探索卡包
-```bash
-cd cardpacks/ai-decision
-# 查看AI创业决策卡包
-```
-
-### 3. 使用卡包
-- **PDF格式**：直接下载阅读
-- **插件格式**：导入日问一问插件
-- **Web格式**：在线浏览和分享
-
-### 4. 关联插件
-```bash
-cd plugins/daily-question
-# 查看日问一问插件源码
-```
-
-## 📦 卡包列表
-
-### 已发布卡包
-
-| 卡包名称 | 领域 | 卡片数 | 格式 | 状态 |
-|---|---|---|---|---|
-| **AI创业决策卡** | 创业决策 | 100 | PDF/插件 | ✅ 已发布 |
-| **个人生产力卡** | 个人管理 | - | 开发中 | 🔄 |
-| **学习方法卡** | 学习方法 | - | 规划中 | 📋 |
-
-### 卡包特色
-
-- **双层结构**：问题层(35字) + 扩展层(100字)
-- **多格式输出**：PDF、插件、Web等多种格式
-- **免费分发**：PDF版本免费开放
-- **专业审核**：内容质量和专业度保证
-
-## 🛠️ 开发工具
-
-### PDF生成工具
-- 自动生成美观的PDF文档
-- 支持自定义模板
-- 批量生成和导出
-
-### 插件适配工具
-- 自动适配日问一问插件格式
-- 格式验证和错误检查
-- 插件包生成和发布
-
-### 质量检查工具
-- 内容质量自动检查
-- 格式规范验证
-- 用户反馈收集
-
-## 📖 创作指南
-
-### 卡片创作原则
-1. **问题导向**：以问题为核心，引发思考
-2. **结构简洁**：问题层35字，扩展层100字
-3. **视角多元**：个人经验、理论原则、批判反思
-4. **可操作性**：引导思考，而非给出答案
-
-### 贡献方式
-1. **内容贡献**：提交新的卡包或改进现有卡包
-2. **工具开发**：贡献工具脚本和功能
-3. **文档完善**：改进文档和示例
-4. **社区运营**：参与讨论和反馈
-
-## 🤝 社区
-
-### 参与方式
-- **GitHub Issues**：报告问题、提出建议
-- **Pull Requests**：贡献内容和代码
-- **Discussions**：参与讨论和交流
-- **Discord/微信群**：实时交流
-
-### 联系方式
-- **GitHub**：https://github.com/cnfeat/CardPackStudio
-- **作者**：cnfeat
-- **个人网站**：https://www.cnfeat.com
-- **日课一问插件**：https://github.com/cnfeat/DailyQApk
-
-## 📄 许可证
-
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
-
-## 🙏 致谢
-
-感谢所有贡献者和支持者的努力！
+**关注点不在于工具，而在于「好问题」本身。**
 
 ---
 
-**CardPack Studio** - 让知识创作和分享更简单 🚀
+## 📦 卡包列表
+
+| 卡包 | 卡片数 | 主题 | 格式 | 状态 |
+|---|---|---|---|---|
+| [AI-Native创业决策卡](cardpacks/ai-decision/) | 100 | AI时代创业决策 | HTML / PDF / JSON | ✅ |
+| [你的人生故事](cardpacks/YourLifeStory/) | 100 | 10个人生主题·自我叙事 | HTML / PDF | ✅ |
+
+### 你的人生故事卡包
+
+> 100 张问答卡 · 10 个人生主题
+
+把零散的人生瞬间，变成可以被看见、被理解、被永远记住的鲜活故事。
+
+10 个主题：**觉醒时刻** · **隐秘的骄傲** · **至暗时刻** · **关系重塑** · **未竟之愿** · **鲜活治愈** · **勇敢抉择** · **性格溯源** · **生活热爱** · **人生回望**
+
+A6 卡片设计（豆瓣绿配色），支持屏幕浏览和打印。
+
+### AI-Native创业决策卡
+
+> 100 张决策卡 · 4 大创业阶段
+
+用苏格拉底式提问，帮创业者在 AI 时代做出更好的决策。
+
+---
+
+## 📁 仓库结构
+
+```
+CardPackStudio/
+├── cardpacks/          # 卡包集合（每个卡包独立目录）
+│   ├── ai-decision/    # AI创业决策卡包
+│   └── YourLifeStory/  # 你的人生故事卡包
+├── tools/              # 工具脚本
+├── docs/               # 创作方法论文档
+└── plugins/            # 关联项目（如日课一问）
+```
+
+📄 卡包内容采用 **[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)** 许可。代码部分采用 MIT 许可。
+
+---
+
+## 🔗 相关链接
+
+- **个人网站**：[cnfeat.com](https://www.cnfeat.com)
+- **卡片创作法**：100天三阶段写作训练系统
+- **日课一问**：[DailyQApk](https://github.com/cnfeat/DailyQApk) — 每日反思 Android 应用
