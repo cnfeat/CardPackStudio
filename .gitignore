@@ -58,6 +58,9 @@ build/
 *.log
 logs/
 
+# WorkBuddy
+.workbuddy/
+
 # Cache
 .cache/
 *.cache

@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你的人生故事卡包 · 完整版</title>
+<style>
+  @page { size: A6; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    background: #e8e5e0;
+    color: #1a1a1a;
+  }
+  .page {
+    width: 105mm;
+    height: 148mm;
+    margin: 16px auto;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1.5px solid #3C9D4E;
+  }
+  .page::before {
+    content: '';
+    position: absolute;
+    top: -1.5px; left: -1.5px; right: -1.5px;
+    height: 4px;
+    background: #3C9D4E;
+    z-index: 1;
+  }
+  @media print {
+    body { background: white; }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      width: 100%;
+      height: 148mm;
+      page-break-after: always;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: avoid; }
+    .page::before { display: none; }
+  }
+
+  .cover {
+    background: #f8faf8;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+    padding: 10mm;
+  }
+  .cover .tag {
+    font-size: 8pt; color: #2E7D38; background: #e8f5e9;
+    padding: 4px 18px; border-radius: 14px; letter-spacing: 5px; margin-bottom: 18px;
+  }
+  .cover h1 { font-size: 22pt; font-weight: bold; color: #1a1a1a; line-height: 1.4; margin-bottom: 6px; }
+  .cover .sub { font-size: 10pt; color: #5c5852; margin-bottom: 24px; }
+  .cover .meta { font-size: 8.5pt; color: #5c5852; line-height: 2.2; }
+  .cover .studio { position: absolute; bottom: 8mm; font-size: 7pt; color: #b0aba5; letter-spacing: 3px; }
+
+  .txt { padding: 10mm 9mm; display: flex; flex-direction: column; }
+  .txt .bq { font-size: 14pt; font-weight: bold; color: #1a1a1a; line-height: 1.8; margin-bottom: 8px; }
+  .txt .bt { font-size: 9.5pt; color: #5c5852; line-height: 2; margin-bottom: 3px; }
+  .txt .dv { width: 14mm; border-top: 1px solid #3C9D4E; margin: 8px 0; }
+  .txt .rl { display: flex; gap: 8px; margin-bottom: 6px; font-size: 8.5pt; line-height: 1.8; }
+  .txt .rn { flex-shrink: 0; font-family: Georgia,serif; font-size: 12pt; color: #3C9D4E; width: 18px; text-align: center; }
+  .txt .rt { color: #5c5852; }
+  .txt .ad { display: inline-block; font-size: 7pt; color: #2E7D38; background: #e8f5e9; padding: 3px 12px; border-radius: 10px; margin-right: 5px; margin-bottom: 5px; }
+  .txt .ft { margin-top: auto; font-size: 7pt; color: #b0aba5; text-align: center; letter-spacing: 3px; padding-top: 8px; }
+
+  .intro-page { padding: 11mm 9mm; display: flex; flex-direction: column; }
+  .intro-page .hd { font-size: 15pt; font-weight: bold; color: #1a1a1a; line-height: 1.7; margin-bottom: 10mm; }
+  .intro-page .bt { font-size: 9.5pt; color: #5c5852; line-height: 2.2; margin-bottom: 2px; }
+  .intro-page .dv { width: 14mm; border-top: 1px solid #3C9D4E; margin: 6mm 0; }
+  .intro-page .pull { font-size: 11pt; font-weight: 500; color: #1a1a1a; line-height: 1.9; padding: 0 0 0 6px; border-left: 2px solid #3C9D4E; margin-bottom: 6mm; }
+  .intro-page .soft { font-size: 8pt; color: #8aaa8a; font-style: italic; margin-top: auto; text-align: center; }
+  .intro-page .ft { font-size: 7pt; color: #b0aba5; text-align: center; letter-spacing: 3px; padding-top: 6px; }
+
+  .end-page { padding: 11mm 9mm; display: flex; flex-direction: column; justify-content: center; }
+  .end-page h3 { font-size: 15pt; font-weight: bold; color: #1a1a1a; line-height: 1.7; margin-bottom: 6mm; }
+  .end-page .bt { font-size: 9.5pt; color: #5c5852; line-height: 2.2; margin-bottom: 2px; }
+  .end-page .dv { width: 14mm; border-top: 1px solid #3C9D4E; margin: 5mm 0; }
+  .end-page .pull { font-size: 10pt; font-weight: 500; color: #1a1a1a; line-height: 1.9; padding-left: 8px; border-left: 2px solid #3C9D4E; margin: 5mm 0; }
+  .end-page .close { font-size: 9pt; color: #5c5852; font-style: italic; line-height: 1.8; margin-top: 8mm; }
+  .end-page .ft { font-size: 7pt; color: #b0aba5; text-align: center; letter-spacing: 3px; margin-top: 8mm; }
+
+  .copyright-page { padding: 11mm 9mm; display: flex; flex-direction: column; justify-content: center; }
+  .copyright-page h4 { font-size: 12pt; font-weight: bold; color: #1a1a1a; margin-bottom: 5mm; }
+  .copyright-page .dv { width: 14mm; border-top: 1px solid #3C9D4E; margin: 5mm 0; }
+  .copyright-page .info { font-size: 8pt; color: #5c5852; line-height: 2.4; }
+  .copyright-page .info a { color: #2E7D38; text-decoration: none; word-break: break-all; }
+  .copyright-page .info .label { font-weight: bold; color: #1a1a1a; }
+  .copyright-page .cclogo { font-size: 7pt; color: #b0aba5; margin-top: 8mm; line-height: 1.8; }
+  .copyright-page .ft { font-size: 7pt; color: #b0aba5; text-align: center; letter-spacing: 3px; margin-top: 6mm; }
+
+  .ch { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 10mm; background: #f8faf8; }
+  .ch .ci { font-family: Georgia,serif; font-size: 9pt; color: #3C9D4E; letter-spacing: 4px; margin-bottom: 20px; }
+  .ch .ct { font-size: 20pt; font-weight: bold; color: #1a1a1a; margin-bottom: 8px; }
+  .ch .cd { font-size: 9pt; color: #5c5852; line-height: 2; max-width: 80%; }
+  .ch .cc { color: #3C9D4E; font-size: 10pt; opacity: 0.4; margin: 14px 0; }
+  .ch .cr { font-size: 7pt; color: #b0aba5; letter-spacing: 3px; }
+
+  .qc { display: flex; flex-direction: column; padding: 8mm 8mm 7mm 8mm; position: relative; }
+  .qc .qh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4mm; }
+  .qc .qt { font-size: 6.5pt; color: #2E7D38; background: #e8f5e9; padding: 2px 10px; border-radius: 8px; letter-spacing: 2px; }
+  .qc .qn { font-size: 6.5pt; color: #b0aba5; letter-spacing: 2px; }
+  .qc .bn { font-family: Georgia,"Microsoft YaHei",serif; font-size: 36pt; color: #d0e0d0;; line-height: 0.85; letter-spacing: 6px; margin-bottom: 3mm; }
+  .qc .qq { font-size: 17pt; font-weight: bold; color: #1a1a1a; line-height: 1.6; margin-bottom: 3mm; }
+  .qc .hs { width: 14mm; border-top: 1px solid #3C9D4E; margin-bottom: 3mm; }
+  .qc .hh { font-size: 10pt; font-weight: 300; color: #5c5852; line-height: 1.8; margin-bottom: 4mm; padding-left: 8px; border-left: 2px solid #c8e0c8;; }
+  .qc .qw { flex: 1; min-height: 20mm; background-color: #fff; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='33'%3E%3Cline x1='0' y1='32' x2='1' y2='32' stroke='%23b0c8b0' stroke-width='1'/%3E%3C/svg%3E"); background-size: 100% 33px; background-repeat: repeat-y; }
+
+  .ce { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 10mm; background: #f8faf8; }
+  .ce .cs { font-size: 28pt; color: #3C9D4E; opacity: 0.3; margin-bottom: 16px; }
+  .ce .ct { font-size: 16pt; font-weight: bold; color: #1a1a1a; line-height: 1.8; margin-bottom: 14px; }
+  .ce .cx { font-size: 10pt; color: #5c5852; line-height: 2.4; }
+</style>
+</head>
+<body>
+<div class="page cover">
+  <div class="tag">人生故事卡包</div>
+  <h1>你的人生故事</h1>
+  <div class="sub">100 张问答卡 · 10 个人生主题</div>
+  <div class="meta">
+    把零散的人生瞬间<br>
+    变成可以被看见、被理解、<br>
+    被永远记住的鲜活故事。
+  </div>
+  <div class="studio">卡片创作实验室 出品</div>
+</div>
+<div class="page intro-page">
+  <p class="hd">你值得被理解、被记住、被鲜活记录下来。</p>
+  <p class="bt">你每天说了很多话，但真正关于自己的，寥寥无几。你拍了很多照片，但那些看不见的心境、感受、觉醒的瞬间——却从来没有被认真地写下来过。</p>
+  <div class="dv"></div>
+  <p class="pull">把零散的人生瞬间，变成可以被看见、被理解、被永远记住的鲜活故事。</p>
+  <p class="bt">所以我们做了这套卡包。不是问卷，不是考试，不是自传。是一套鲜活的问题——用 100 次提问，陪你走完一段走向自己的路。</p>
+  <p class="soft">你值得被这样认真地对待。</p>
+  <div class="ft">卡片创作实验室 出品</div>
+</div>
+<div class="page txt">
+  <p class="bq" style="margin-bottom:8px">使用说明</p>
+  <div class="rl"><span class="rn">01</span><span class="rt"><strong>慢慢回答，遵循表达自由。</strong>没有时间限制，没有字数要求。可以写一句话，也可以写三页。可以今天写三道，也可以三个月后再翻开。</span></div>
+  <div class="rl"><span class="rn">02</span><span class="rt"><strong>不用担心写得好不好，不必追求完美。</strong>这不是作文比赛。语法、逻辑、结构——都不重要。重要的是你写下的，是你真实的感受。</span></div>
+  <div class="rl"><span class="rn">03</span><span class="rt"><strong>你不需要回答完所有问题。</strong>只回答你愿意回答的。有些题目可能现在不适合你，那就跳过。跳过不是放弃，是尊重自己的节奏。</span></div>
+  <div class="rl"><span class="rn">04</span><span class="rt"><strong>你可以跟重要的人一起回答。</strong>伴侣、朋友、家人——选几张卡片，各自写下答案，然后交换阅读。</span></div>
+  <div class="rl"><span class="rn">05</span><span class="rt"><strong>写完的卡片，可以作为礼物送出去。</strong>把你写满答案的卡片，送给一个你在乎的人。这是最奢侈的礼物。</span></div>
+  <div class="dv"></div>
+  <p class="bt" style="font-weight:500;margin-bottom:6px">适合谁用</p>
+  <div style="margin-bottom:6px"><span class="ad">送给自己</span><span class="ad">送给朋友</span><span class="ad">送给伴侣</span></div>
+  <p class="bt" style="font-size:8pt;line-height:2"><strong>送给自己</strong>：每年生日，静下来整理一段人生。<br><strong>送给朋友</strong>：比礼物更难得的，是一个好问题。<br><strong>送给伴侣</strong>：交换答案，看见彼此从未说出的那一面。</p>
+  <div class="ft">卡片创作实验室 出品</div>
+</div>
+<div class="page copyright-page">
+  <h4>版权声明</h4>
+  <div class="dv"></div>
+  <div class="info">
+    <p><span class="label">产品名称</span>：你的人生故事卡包 · 完整版 100 卡</p>
+    <p><span class="label">出品方</span>：卡片创作实验室</p>
+    <p><span class="label">官方网站</span>：<a href="https://www.cnfeat.com/">https://www.cnfeat.com/</a></p>
+    <p><span class="label">开源仓库</span>：<a href="https://github.com/cnfeat/CardPackStudio">https://github.com/cnfeat/CardPackStudio</a></p>
+  </div>
+  <div class="dv"></div>
+  <div class="cclogo">
+    <p>本卡包内容采用 <strong>CC BY-NC-SA 4.0</strong> 许可协议</p>
+    <p>署名 - 非商业性使用 - 相同方式共享</p>
+    <p>您可以自由分享、改编本作品，但须署名来源、不得用于商业目的，</p>
+    <p>且改编后的作品须以相同许可协议发布。</p>
+  </div>
+  <div class="ft">卡片创作实验室 出品</div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 01</div>
+  <div class="ct">觉醒时刻</div>
+  <div class="cd">那些打破认知、褪去幼稚、突然长大的瞬间，是人生真正的分水岭。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 001 ─ 010</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">001 / 100</span></div>
+  <div class="bn">001</div>
+  <div class="qq">有没有一个瞬间，你突然意识到「世界不是围着我转的」？那一刻的心境是什么样的？</div>
+  <div class="hs"></div>
+  <div class="hh">不一定是重大挫折，可能是一次独自碰壁、一次看懂大人的不易、一次接受遗憾的时刻。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">002 / 100</span></div>
+  <div class="bn">002</div>
+  <div class="qq">过去的认知里，有哪一个想法被彻底推翻，让你活得更通透？</div>
+  <div class="hs"></div>
+  <div class="hh">关于人情、成长、得失、善良、期待，任何颠覆你旧观念的改变都可以。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">003 / 100</span></div>
+  <div class="bn">003</div>
+  <div class="qq">你什么时候第一次为自己的身体感到羞耻或骄傲？那种感觉，后来怎样影响了你对自己的看法？</div>
+  <div class="hs"></div>
+  <div class="hh">不一定是青春期，可能是小时候被说胖、长大后健身第一次看到肌肉线条、学会穿搭后被夸的那一刻。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">004 / 100</span></div>
+  <div class="bn">004</div>
+  <div class="qq">你第一次真正接纳「不完美的自己」，是在什么时候？</div>
+  <div class="hs"></div>
+  <div class="hh">接纳自己的平庸、敏感、内向、笨拙，与自己和解的鲜活瞬间。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">005 / 100</span></div>
+  <div class="bn">005</div>
+  <div class="qq">有没有一个瞬间，你突然读懂了父母的难处与无奈？</div>
+  <div class="hs"></div>
+  <div class="hh">长大后的某个场景、某句话、某件小事，让你瞬间共情长辈。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">006 / 100</span></div>
+  <div class="bn">006</div>
+  <div class="qq">哪一次选择，让你彻底摆脱了别人的眼光与期待？</div>
+  <div class="hs"></div>
+  <div class="hh">不再讨好、不再迎合、开始为自己而活的关键节点。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">007 / 100</span></div>
+  <div class="bn">007</div>
+  <div class="qq">你从哪件事里，真正学会了「允许一切发生」？</div>
+  <div class="hs"></div>
+  <div class="hh">经历失控、遗憾、落空后，慢慢释怀、学会接纳的成长过程。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">008 / 100</span></div>
+  <div class="bn">008</div>
+  <div class="qq">过去年少的哪一个执念，现在看来格外幼稚却无比珍贵？</div>
+  <div class="hs"></div>
+  <div class="hh">曾经的倔强、较真、不甘，如今回看的全新感悟。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">009 / 100</span></div>
+  <div class="bn">009</div>
+  <div class="qq">哪一次成长，是你独自咬牙完成、无人知晓的？</div>
+  <div class="hs"></div>
+  <div class="hh">悄悄自愈、悄悄变强、默默扛下一切的独处时刻。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">觉醒时刻</span><span class="qn">010 / 100</span></div>
+  <div class="bn">010</div>
+  <div class="qq">当下的你，和三年前的你最大的认知觉醒是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">关于生活、感情、自我、未来、得失的全新理解。</div>
+  <div class="qw"></div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 02</div>
+  <div class="ct">隐秘的骄傲</div>
+  <div class="cd">真正的骄傲不需要掌声。那些不被看见的努力、被低估的选择、只有自己知道的硬仗，构成了你真正的底气。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 011 ─ 020</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">011 / 100</span></div>
+  <div class="bn">011</div>
+  <div class="qq">回想一路走来，你觉得自己最不容易的地方是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不一定是外部成就，而是内心的坚持、一次次的自我说服、无声的抉择。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">012 / 100</span></div>
+  <div class="bn">012</div>
+  <div class="qq">你偷偷练习过什么？现在怎么样了？</div>
+  <div class="hs"></div>
+  <div class="hh">一项技能、一种习惯、一种「看起来毫不费力」的能力——背后是日复一日的悄悄努力。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">013 / 100</span></div>
+  <div class="bn">013</div>
+  <div class="qq">你扛过了一个至暗时刻之后，最骄傲的是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不是结果，是你没有放弃的那个瞬间、你选择了面对而不是逃避。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">014 / 100</span></div>
+  <div class="bn">014</div>
+  <div class="qq">你为自己做过最奢侈的事是什么？（不一定是钱。）</div>
+  <div class="hs"></div>
+  <div class="hh">一次独自旅行、给自己报了一个很贵的课、买了一件一直舍不得的东西——任性但有意义的自我奖赏。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">015 / 100</span></div>
+  <div class="bn">015</div>
+  <div class="qq">你做过哪一件「最不像自己」的事，却让你觉得特别棒？</div>
+  <div class="hs"></div>
+  <div class="hh">社恐上台演讲、宅女独自背包旅行、从不运动的人跑了第一个5公里。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">016 / 100</span></div>
+  <div class="bn">016</div>
+  <div class="qq">有没有一场小胜利，你至今藏在心里，没跟人炫耀过——却每次想起来都在暗爽？</div>
+  <div class="hs"></div>
+  <div class="hh">被低估后默默证明自己、在没人看好的领域悄悄做成了一件事。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">017 / 100</span></div>
+  <div class="bn">017</div>
+  <div class="qq">有什么是别人不以为然，但你认为是自己人生中最意义非凡的一件事？</div>
+  <div class="hs"></div>
+  <div class="hh">可能是一次拒绝、一次放弃、一次停下来——在别人看来寻常，在你这里却是关键转折。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">018 / 100</span></div>
+  <div class="bn">018</div>
+  <div class="qq">你走过的哪一条弯路，现在回头看是无价之宝？</div>
+  <div class="hs"></div>
+  <div class="hh">试错、转行、失恋、离开——当时觉得浪费了时间，后来发现那段时间塑造了你。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">019 / 100</span></div>
+  <div class="bn">019</div>
+  <div class="qq">你坚持最久、滋养自己的一件小事是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">写日记、每周买花、给自己做饭、散步——看似简单，坚持下来就是盔甲。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">隐秘的骄傲</span><span class="qn">020 / 100</span></div>
+  <div class="bn">020</div>
+  <div class="qq">迄今为止，你最认可自己人生中的哪一次成长蜕变？</div>
+  <div class="hs"></div>
+  <div class="hh">从那样的人变成这样的人的转折点，你看得见自己的变化。</div>
+  <div class="qw"></div>
+</div>
+<div class="page ce">
+  <div class="cs">✦</div>
+  <div class="ct">你已经完成了<br>20 张卡片</div>
+  <div class="cx">
+    <p>歇一歇，喝杯热茶。</p>
+    <p>不需要一次写完。</p>
+    <p>随时回来。</p>
+  </div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 03</div>
+  <div class="ct">至暗时刻</div>
+  <div class="cd">那些让你哭过、怕过、差点放弃过的深渊，最终都变成了你灵魂的厚度。请鲜活地回看，你已经走过来了。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 021 ─ 030</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">021 / 100</span></div>
+  <div class="bn">021</div>
+  <div class="qq">截至目前，你觉得人生最无助的日子是怎么熬过来的？</div>
+  <div class="hs"></div>
+  <div class="hh">不是问那段日子有多惨，而是问：是什么拉了你一把？是自己、是一个人、还是一句话？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">022 / 100</span></div>
+  <div class="bn">022</div>
+  <div class="qq">你曾因为什么，哭得最厉害？现在回想起来，那场眼泪改变了什么？</div>
+  <div class="hs"></div>
+  <div class="hh">可以是最痛的失去，也可以是最深的感动——重点是眼泪之后你怎么了。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">023 / 100</span></div>
+  <div class="bn">023</div>
+  <div class="qq">有没有一段时间，你觉得自己完全被击垮了，但最后是一个人慢慢站起来的？</div>
+  <div class="hs"></div>
+  <div class="hh">不用描述有多痛，就说说你是怎么重新学会走路的。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">024 / 100</span></div>
+  <div class="bn">024</div>
+  <div class="qq">你经历过的最难熬的「假装没事」是什么时候？</div>
+  <div class="hs"></div>
+  <div class="hh">表面上一切照旧，心里却快要撑不住的日子——那时候你用什么方式扛下来的？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">025 / 100</span></div>
+  <div class="bn">025</div>
+  <div class="qq">哪一次被生活打倒的经历，反而让你长出了新的力量？</div>
+  <div class="hs"></div>
+  <div class="hh">生活给你一记重拳，你爬起来之后发现自己变强了。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">026 / 100</span></div>
+  <div class="bn">026</div>
+  <div class="qq">你第一次感受到「死亡」的存在是什么时候？</div>
+  <div class="hs"></div>
+  <div class="hh">亲人、朋友、宠物——或是路过殡仪馆、读到一本关于死亡的书。它在你心里种下了什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">027 / 100</span></div>
+  <div class="bn">027</div>
+  <div class="qq">有没有哪件事，让你觉得自己被全世界误解，后来是怎么走出来的？</div>
+  <div class="hs"></div>
+  <div class="hh">不被理解、被冤枉、被孤立——你是靠什么力量重新相信自己是对的？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">028 / 100</span></div>
+  <div class="bn">028</div>
+  <div class="qq">在最低谷的时候，是哪一句话、哪一首歌、哪一本书，给了你继续往前走的力气？</div>
+  <div class="hs"></div>
+  <div class="hh">精神拐杖往往比实际的帮助更有力，找出它。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">029 / 100</span></div>
+  <div class="bn">029</div>
+  <div class="qq">如果让你对低谷期的自己说一句话，你会说什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不要加油，不要都会好的——说一句你真的需要听到的话。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">至暗时刻</span><span class="qn">030 / 100</span></div>
+  <div class="bn">030</div>
+  <div class="qq">回头看，那段最黑暗的日子，带走了什么，又留下了什么？</div>
+  <div class="hs"></div>
+  <div class="hh">失去的确认，留下的宝藏。你已经可以平静地盘点它了。</div>
+  <div class="qw"></div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 04</div>
+  <div class="ct">关系重塑</div>
+  <div class="cd">亲密关系是一面镜子，不仅照见对方，更照见你自己是谁、你愿意成为谁、你不再愿意成为谁。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 031 ─ 040</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">031 / 100</span></div>
+  <div class="bn">031</div>
+  <div class="qq">在你生命中，有没有一个人，你曾以为会是一辈子，后来却走散了？</div>
+  <div class="hs"></div>
+  <div class="hh">不是追问为什么走散，而是这段关系让你学会了什么、改变了你什么。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">032 / 100</span></div>
+  <div class="bn">032</div>
+  <div class="qq">在亲密关系里，你学到的最大教训是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">关于信任、边界、表达、妥协——你付出了什么代价才学到这一课的？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">033 / 100</span></div>
+  <div class="bn">033</div>
+  <div class="qq">有没有一个人，教会了你什么叫做爱自己？</div>
+  <div class="hs"></div>
+  <div class="hh">可能是一个伴侣、一个朋友、一个导师、甚至是一次失败的亲密关系。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">034 / 100</span></div>
+  <div class="bn">034</div>
+  <div class="qq">友情里，你因为什么失去过一个很重要的人？</div>
+  <div class="hs"></div>
+  <div class="hh">成长的步伐不一致、一次误会、一个没有说出口的道歉——关系冷却背后总有一个清晰的节点。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">035 / 100</span></div>
+  <div class="bn">035</div>
+  <div class="qq">有没有一个人，是你在心底默默想念、却再也没有联系过的？</div>
+  <div class="hs"></div>
+  <div class="hh">不是谁对谁错的问题。就是某个瞬间忽然很想念，但你知道——回不去了。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">036 / 100</span></div>
+  <div class="bn">036</div>
+  <div class="qq">你曾经为了维持一段关系，做过的最大的让步或牺牲是什么？现在回头看，值吗？</div>
+  <div class="hs"></div>
+  <div class="hh">牺牲了自己的时间、底线、朋友，甚至一段时间的自己——现在的你，会怎么评价当初的那个选择？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">037 / 100</span></div>
+  <div class="bn">037</div>
+  <div class="qq">你觉得什么是一个人最打动你的「鲜活」？</div>
+  <div class="hs"></div>
+  <div class="hh">不一定是浪漫举动，可能是记住了你随口说过的话、在你最尴尬时帮你圆场、默默接住了你的情绪。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">038 / 100</span></div>
+  <div class="bn">038</div>
+  <div class="qq">当你终于放下一个人或一段关系时，你在放下什么？</div>
+  <div class="hs"></div>
+  <div class="hh">放下的是对那个人的执念，还是对那个曾被爱着的自己的留恋？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">039 / 100</span></div>
+  <div class="bn">039</div>
+  <div class="qq">你现在对「朋友」这个词的定义，和五年前有什么不同？</div>
+  <div class="hs"></div>
+  <div class="hh">不再追求数量、不再害怕独处、不再把所有人都当成可以掏心掏肺的对象——你的边界在哪里？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">关系重塑</span><span class="qn">040 / 100</span></div>
+  <div class="bn">040</div>
+  <div class="qq">在一段关系里，你最在意的是什么？什么是你的底线——碰了就翻脸的那种？</div>
+  <div class="hs"></div>
+  <div class="hh">不是要吐槽谁，而是要理清：你真正需要的是什么？什么让你感觉自己被尊重？</div>
+  <div class="qw"></div>
+</div>
+<div class="page ce">
+  <div class="cs">✦</div>
+  <div class="ct">你已经完成了<br>40 张卡片</div>
+  <div class="cx">
+    <p>歇一歇，喝杯热茶。</p>
+    <p>不需要一次写完。</p>
+    <p>随时回来。</p>
+  </div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 05</div>
+  <div class="ct">未竟之愿</div>
+  <div class="cd">遗憾不必被消除，野心也不必被解释。有些心愿是动力，有些是纪念，有些只是鲜活地放在那里。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 041 ─ 050</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">041 / 100</span></div>
+  <div class="bn">041</div>
+  <div class="qq">如果你没有任何顾虑，你最想做的事是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不是发大财这种空泛答案。限制越小，你描述的事会越具体——那才是真正想做的。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">042 / 100</span></div>
+  <div class="bn">042</div>
+  <div class="qq">有没有一件事，你一直想做，却因为害怕失败而迟迟没有开始？</div>
+  <div class="hs"></div>
+  <div class="hh">换个城市、换份工作、学一门手艺、追一个人——那个万一不行怎么办具体是什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">043 / 100</span></div>
+  <div class="bn">043</div>
+  <div class="qq">你有没有曾经为了某个目标拼尽全力，最后却没成功？那个过程给了你什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不问为什么没成，问这个过程你身上多了什么。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">044 / 100</span></div>
+  <div class="bn">044</div>
+  <div class="qq">如果时间可以重来，你最想回到哪个时刻，做一次不同的选择？</div>
+  <div class="hs"></div>
+  <div class="hh">不是后悔药，是反事实思考：那个没走的路，可能通向哪里？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">045 / 100</span></div>
+  <div class="bn">045</div>
+  <div class="qq">你觉得自己这辈子最想实现的一件事，现在离它还有多远？</div>
+  <div class="hs"></div>
+  <div class="hh">画一条从现在到那里的线——中间是什么在挡着你？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">046 / 100</span></div>
+  <div class="bn">046</div>
+  <div class="qq">你有没有一个想起来就心口一紧的遗憾？你最想对那个遗憾里的自己说什么？</div>
+  <div class="hs"></div>
+  <div class="hh">遗憾的重量不是用来压垮你的，是用来提醒你：有些事，现在做还来得及。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">047 / 100</span></div>
+  <div class="bn">047</div>
+  <div class="qq">如果你可以给十年后的自己寄一张明信片，上面你只写一行字，你会写什么？</div>
+  <div class="hs"></div>
+  <div class="hh">别写你成功了吗，写你希望她记住的、不要忘记的。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">048 / 100</span></div>
+  <div class="bn">048</div>
+  <div class="qq">你曾经放弃过的什么，今天想起来会让你觉得可惜？</div>
+  <div class="hs"></div>
+  <div class="hh">一个爱好、一个人、一个目标——那些算了的背后，是不是还有火苗？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">049 / 100</span></div>
+  <div class="bn">049</div>
+  <div class="qq">有什么是你很想学会、却总觉得自己学不会的？</div>
+  <div class="hs"></div>
+  <div class="hh">不是怪自己能力不行，而是那个想学本身，就是一个信号。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">未竟之愿</span><span class="qn">050 / 100</span></div>
+  <div class="bn">050</div>
+  <div class="qq">如果让你选一项人生未完成的心愿先跨出一步，你会迈哪一步？</div>
+  <div class="hs"></div>
+  <div class="hh">不一定是很大的动作。可能只是下单一本书、报一个名、发一条消息。</div>
+  <div class="qw"></div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 06</div>
+  <div class="ct">鲜活治愈</div>
+  <div class="cd">真正的鲜活不是软弱，是受过伤之后，依然选择用最柔软的方式对待自己和世界。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 051 ─ 060</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">051 / 100</span></div>
+  <div class="bn">051</div>
+  <div class="qq">最近一次让你感到内心平静的时刻，是什么时候？</div>
+  <div class="hs"></div>
+  <div class="hh">那是一个什么样的画面？你在哪里？跟谁在一起？还是在独处？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">052 / 100</span></div>
+  <div class="bn">052</div>
+  <div class="qq">你用什么方式安抚自己的情绪？</div>
+  <div class="hs"></div>
+  <div class="hh">吃甜食、泡澡、写日记、跑十公里、跟朋友吐槽——你的急救箱里放着什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">053 / 100</span></div>
+  <div class="bn">053</div>
+  <div class="qq">有没有一句话、一首歌、一本书，曾经治愈过你？</div>
+  <div class="hs"></div>
+  <div class="hh">那种被理解了的感觉——哪些文字或旋律穿过你的盔甲，触碰到了柔软的深处？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">054 / 100</span></div>
+  <div class="bn">054</div>
+  <div class="qq">你为自己做过最鲜活的一件事，是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">给自己放假、原谅自己的一次失误、告诉自己没关系的——你的自愈时刻。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">055 / 100</span></div>
+  <div class="bn">055</div>
+  <div class="qq">你觉得你身上最鲜活的特质是什么？你是如何发现它的？</div>
+  <div class="hs"></div>
+  <div class="hh">耐心、倾听、包容、不轻易评判——这些品质不是天生就有的，它们从哪里长出来的？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">056 / 100</span></div>
+  <div class="bn">056</div>
+  <div class="qq">在什么样的天气里、什么样的空间里，你最能感到安全和被治愈？</div>
+  <div class="hs"></div>
+  <div class="hh">下雨天窝在沙发里、深夜里点一盏灯、厨房里煮着汤——你的安全基地长什么样？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">057 / 100</span></div>
+  <div class="bn">057</div>
+  <div class="qq">你最好的朋友会怎样形容你的「软」和「韧」？</div>
+  <div class="hs"></div>
+  <div class="hh">软不是弱，韧不是硬。你身上这两种力量是怎么并存的？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">058 / 100</span></div>
+  <div class="bn">058</div>
+  <div class="qq">当生活中所有事都压过来时，你是怎么给自己找回一点喘息空间的？</div>
+  <div class="hs"></div>
+  <div class="hh">关手机？出门散步？洗一个很长的澡？找一个人说话？——你的重启机制是什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">059 / 100</span></div>
+  <div class="bn">059</div>
+  <div class="qq">你有没有一个属于自己的秘密基地——可以是真实的地方，也可以是心里的一处？</div>
+  <div class="hs"></div>
+  <div class="hh">小时候的衣柜后面、大学操场角落、现在家里的阳台——那个只属于我的空间。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">鲜活治愈</span><span class="qn">060 / 100</span></div>
+  <div class="bn">060</div>
+  <div class="qq">如果你可以对自己说一句真正的「辛苦了」，你最想为自己哪一段经历说这句话？</div>
+  <div class="hs"></div>
+  <div class="hh">不是说给别人的，是说给自己的。你心里清楚哪一段经历最值得被自己看见和心疼。</div>
+  <div class="qw"></div>
+</div>
+<div class="page ce">
+  <div class="cs">✦</div>
+  <div class="ct">你已经完成了<br>60 张卡片</div>
+  <div class="cx">
+    <p>歇一歇，喝杯热茶。</p>
+    <p>不需要一次写完。</p>
+    <p>随时回来。</p>
+  </div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 07</div>
+  <div class="ct">勇敢抉择</div>
+  <div class="cd">勇敢不一定是冲出去，有时候是留下来。选择本身，就是一种力量。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 061 ─ 070</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">061 / 100</span></div>
+  <div class="bn">061</div>
+  <div class="qq">你做过的最艰难的一次决定是什么？那个决定改变了你什么？</div>
+  <div class="hs"></div>
+  <div class="hh">离开一个人、辞掉一份工作、搬到一个新城市——选择的难在哪里？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">062 / 100</span></div>
+  <div class="bn">062</div>
+  <div class="qq">有没有一次，你选择了一个看起来更难的路，但至今不后悔？</div>
+  <div class="hs"></div>
+  <div class="hh">为什么选难走的路？因为你知道正确的路和容易的路，往往不是同一条。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">063 / 100</span></div>
+  <div class="bn">063</div>
+  <div class="qq">你放弃过什么，今天想起来却是松了一口气的选择？</div>
+  <div class="hs"></div>
+  <div class="hh">不是你不够坚持，而是那个坚持已经不再值得。放弃也可以是勇敢。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">064 / 100</span></div>
+  <div class="bn">064</div>
+  <div class="qq">如果给你一次机会，回到过去对做某个决定的自己说一句话，你会说什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不是别选错了，而是——你最想告诉她/他的是什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">065 / 100</span></div>
+  <div class="bn">065</div>
+  <div class="qq">你什么时候第一次毅然决然地离开一个让你不舒服的环境？</div>
+  <div class="hs"></div>
+  <div class="hh">不一定是剧烈冲突，可能是慢慢攒够了失望、醒过来的那个瞬间。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">066 / 100</span></div>
+  <div class="bn">066</div>
+  <div class="qq">你因为什么原因离开过一个人或一份工作？当时是什么推了你最后一把？</div>
+  <div class="hs"></div>
+  <div class="hh">那根稻草是什么？是你终于决定不再委屈自己的那个声音，还是别人的一句提醒？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">067 / 100</span></div>
+  <div class="bn">067</div>
+  <div class="qq">你做过最需要勇气的一件事，和外人看起来完全不一样。是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">外人可能不以为意，但你知道自己跨过了什么心理障碍才做到的。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">068 / 100</span></div>
+  <div class="bn">068</div>
+  <div class="qq">什么时候你第一次说出「我不愿意」，并坚定地执行了它？</div>
+  <div class="hs"></div>
+  <div class="hh">对父母、对上司、对伴侣、对朋友——说不的代价是什么，回报又是什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">069 / 100</span></div>
+  <div class="bn">069</div>
+  <div class="qq">你觉得你身上最勇敢的时刻和最脆弱的时刻，是不是同一个？</div>
+  <div class="hs"></div>
+  <div class="hh">有时候，承认脆弱就是最大的勇敢。那个时刻是怎样的？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">勇敢抉择</span><span class="qn">070 / 100</span></div>
+  <div class="bn">070</div>
+  <div class="qq">此刻的你，被之前的每一个选择带到了这里。你对过去的自己说一声谢谢，最想谢什么？</div>
+  <div class="hs"></div>
+  <div class="hh">那个不放弃的你、那个不怕犯错的你、那个在关键时刻选了更难那条路的你。</div>
+  <div class="qw"></div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 08</div>
+  <div class="ct">性格溯源</div>
+  <div class="cd">每一种性格都有它的出厂日期和创作作者。你不是突然变成这样的人的，是时光和经历，一笔一笔把你画成现在这个模样。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 071 ─ 080</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">071 / 100</span></div>
+  <div class="bn">071</div>
+  <div class="qq">你觉得你身上哪种性格特质，是你最骄傲的？</div>
+  <div class="hs"></div>
+  <div class="hh">善良、坚韧、幽默、敏感、冷静——不是表面包装，是你自己认可的我。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">072 / 100</span></div>
+  <div class="bn">072</div>
+  <div class="qq">你觉得你身上哪种性格特质，是你最想改掉的？</div>
+  <div class="hs"></div>
+  <div class="hh">过度讨好、优柔寡断、情绪化、完美主义——你看到它的代价了吗？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">073 / 100</span></div>
+  <div class="bn">073</div>
+  <div class="qq">你的哪种性格，是小时候就长出来的？</div>
+  <div class="hs"></div>
+  <div class="hh">童年的你，是不是就很安静、很倔强、很敏感、很爱笑？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">074 / 100</span></div>
+  <div class="bn">074</div>
+  <div class="qq">你觉得成长过程中，哪一个人对你的性格塑造最大？</div>
+  <div class="hs"></div>
+  <div class="hh">父母、老师、朋友、一本书、一部剧——谁给你画了最重要的那一笔？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">075 / 100</span></div>
+  <div class="bn">075</div>
+  <div class="qq">你的防御模式是什么？面对陌生的环境或人，你的第一反应是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">先沉默观察、先热情交友、先筑墙防备——你的出厂设置是怎样的？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">076 / 100</span></div>
+  <div class="bn">076</div>
+  <div class="qq">经历了这么多，你现在更偏爱自己身上的哪一种状态？</div>
+  <div class="hs"></div>
+  <div class="hh">松弛、清醒、柔软、锋利——哪种状态下的你，最像你最喜欢的样子？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">077 / 100</span></div>
+  <div class="bn">077</div>
+  <div class="qq">你觉得自己最大的性格反差是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">比如看起来大大咧咧其实特别敏感、看起来很安静其实内心戏很多。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">078 / 100</span></div>
+  <div class="bn">078</div>
+  <div class="qq">有没有一个瞬间，你发现自己的性格和以前完全不一样了？</div>
+  <div class="hs"></div>
+  <div class="hh">以前不敢拒绝别人，现在能心安理得说不；以前独处就焦虑，现在享受独处。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">079 / 100</span></div>
+  <div class="bn">079</div>
+  <div class="qq">你是如何学会和自己的弱点共处的？</div>
+  <div class="hs"></div>
+  <div class="hh">不是消灭它，是和解。你是从什么时候开始不再跟自己较劲的？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">性格溯源</span><span class="qn">080 / 100</span></div>
+  <div class="bn">080</div>
+  <div class="qq">如果用一个词形容你最真实的自己（不需要给外人看），你会用什么？</div>
+  <div class="hs"></div>
+  <div class="hh">去掉所有人的期待和标签，只剩下你给自己的定义。</div>
+  <div class="qw"></div>
+</div>
+<div class="page ce">
+  <div class="cs">✦</div>
+  <div class="ct">你已经完成了<br>80 张卡片</div>
+  <div class="cx">
+    <p>歇一歇，喝杯热茶。</p>
+    <p>不需要一次写完。</p>
+    <p>随时回来。</p>
+  </div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 09</div>
+  <div class="ct">生活热爱</div>
+  <div class="cd">生命不是用来度过的，是用来活着的。在你的一日三餐和周末午后里，藏着你和这个世界最真实的关系。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 081 ─ 090</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">081 / 100</span></div>
+  <div class="bn">081</div>
+  <div class="qq">你最喜欢的食物是什么？它有没有一个让你一想起来就鼻子一酸的故事？</div>
+  <div class="hs"></div>
+  <div class="hh">家的味道、异乡的温暖、某个人的手艺——食物里常藏着你最深的记忆。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">082 / 100</span></div>
+  <div class="bn">082</div>
+  <div class="qq">你最想和谁一起吃一顿饭？在什么地方？吃什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不限时间、不限距离。那个人可能不在了，也可能还没出现。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">083 / 100</span></div>
+  <div class="bn">083</div>
+  <div class="qq">你最喜欢哪个季节？那个季节的什么最让你着迷？</div>
+  <div class="hs"></div>
+  <div class="hh">春天的风、夏天的西瓜、秋天的落叶、冬天的被窝——具体的气味、温度、光线。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">084 / 100</span></div>
+  <div class="bn">084</div>
+  <div class="qq">你记忆里最快乐的一个场景，是怎样的？</div>
+  <div class="hs"></div>
+  <div class="hh">那个场景里都有谁？空气中是什么味道？你当时在做什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">085 / 100</span></div>
+  <div class="bn">085</div>
+  <div class="qq">有没有一件事，你做的时候会忘记时间？</div>
+  <div class="hs"></div>
+  <div class="hh">画画、弹琴、做饭、拼图、骑行——你的心流在哪里？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">086 / 100</span></div>
+  <div class="bn">086</div>
+  <div class="qq">你喜欢一个人待着吗？一个人时你最常做什么？</div>
+  <div class="hs"></div>
+  <div class="hh">独处对你来说是充电还是消耗？你的独处清单是什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">087 / 100</span></div>
+  <div class="bn">087</div>
+  <div class="qq">你人生中做过的最浪费时间的一件事，现在想想是不是最正确的事？</div>
+  <div class="hs"></div>
+  <div class="hh">发呆、旅行、晒太阳、追一部没什么用的剧——无用之用往往最滋养人。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">088 / 100</span></div>
+  <div class="bn">088</div>
+  <div class="qq">如果让你现在立刻出发去一个地方，你最想去哪？为什么是那里？</div>
+  <div class="hs"></div>
+  <div class="hh">不一定是远方。可能只是小时候家门口的一条街、某个夕阳下的海边。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">089 / 100</span></div>
+  <div class="bn">089</div>
+  <div class="qq">你觉得你的生活中，有没有一些小而美的仪式感？</div>
+  <div class="hs"></div>
+  <div class="hh">早上先喝一杯水、周末睡到自然醒、每晚睡前写三件好事——你的生活秩序和美学。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">生活热爱</span><span class="qn">090 / 100</span></div>
+  <div class="bn">090</div>
+  <div class="qq">快乐对你来说，到底是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不是教科书答案，是你自己定义的。什么能真正让你从心底觉得活着真好？</div>
+  <div class="qw"></div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 10</div>
+  <div class="ct">人生回望</div>
+  <div class="cd">走完这段路，你回头看。不是评判谁输谁赢，而是看看你是谁，你从哪里来，你把自己活成了什么模样。</div>
+  <div class="cc">── ✦ ──</div>
+  <div class="cr">卡 091 ─ 100</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">091 / 100</span></div>
+  <div class="bn">091</div>
+  <div class="qq">如果你的人生是一部电影，它的名字会是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">一句话定调——喜剧、文艺片、公路片、热血漫？你的片名是什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">092 / 100</span></div>
+  <div class="bn">092</div>
+  <div class="qq">你的故事里，最精彩的一段——在哪一年？那一年你多大了？发生了什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不是回忆录，是挑一个你愿意讲给陌生人听的片段。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">093 / 100</span></div>
+  <div class="bn">093</div>
+  <div class="qq">在你的人生中，有没有一个人——改变了你的整个人生轨迹？</div>
+  <div class="hs"></div>
+  <div class="hh">不一定是伴侣，可能是老师、老板、一本书的作者、一个素未谋面的人。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">094 / 100</span></div>
+  <div class="bn">094</div>
+  <div class="qq">如果有一天你要离开这个世界，你最想让别人记住你什么？</div>
+  <div class="hs"></div>
+  <div class="hh">不是成就，不是你赚了多少钱——是你希望被怎样记住。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">095 / 100</span></div>
+  <div class="bn">095</div>
+  <div class="qq">你人生最大的「运气」是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">运气不是天上掉下来的——是别人给的机会、是刚好在对的时间出现在对的地方。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">096 / 100</span></div>
+  <div class="bn">096</div>
+  <div class="qq">如果有来生，你还会选择成为现在的自己吗？</div>
+  <div class="hs"></div>
+  <div class="hh">不是问还会选这条路吗，是问你接受这个版本的自己吗。</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">097 / 100</span></div>
+  <div class="bn">097</div>
+  <div class="qq">你认为人生的意义是什么？你找到你的答案了吗？</div>
+  <div class="hs"></div>
+  <div class="hh">不强求正确答案。你此刻觉得人生是为了什么？它变过吗？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">098 / 100</span></div>
+  <div class="bn">098</div>
+  <div class="qq">你认为自己来这世界一遭，最大的使命或意义是什么？</div>
+  <div class="hs"></div>
+  <div class="hh">你来到这个世界，是为了完成什么？或者你已经在做了？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">099 / 100</span></div>
+  <div class="bn">099</div>
+  <div class="qq">走完这段人生记录，哪一段故事让你最想珍藏，最舍不得忘掉？</div>
+  <div class="hs"></div>
+  <div class="hh">100题写到这里，你最想把这本卡包的哪一页折起来、反复翻看？</div>
+  <div class="qw"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">人生回望</span><span class="qn">100 / 100</span></div>
+  <div class="bn">100</div>
+  <div class="qq">你想对读完这100个回答的那个人，说一句什么话？</div>
+  <div class="hs"></div>
+  <div class="hh">可能是未来的你、你最在乎的人、一个素未谋面的陌生人——此刻，你最后想说的，是什么？</div>
+  <div class="qw"></div>
+</div>
+<div class="page ce">
+  <div class="cs">✦</div>
+  <div class="ct">恭喜你<br>走完了这段旅程</div>
+  <div class="cx">
+    <p>这不是一场考试，没有分数。</p>
+    <p>但你做了一件很勇敢的事。</p>
+    <p>你选择被看见。</p>
+  </div>
+</div>
+<div class="page end-page">
+  <h3>谢谢你，走了这么远。</h3>
+  <p class="bt">你写下的每一个字，都是你曾认真活过的证据。</p>
+  <div class="dv"></div>
+  <p class="bt">这 100 张卡片里，有你的觉醒、你的骄傲、你的至暗与重生。有你的关系、你的遗憾、你的热爱与回望。</p>
+  <p class="bt">你不需要向任何人证明什么——这本卡包本身，就是你曾把自己郑重对待过的最好证明。</p>
+  <div class="pull">把零散的人生瞬间，变成可以被看见、被理解、被永远记住的鲜活故事。</div>
+  <p class="close">愿你一直被记住。被鲜活地记住。</p>
+  <div class="ft">卡片创作实验室 出品</div>
+</div>
+</body>
+</html>
