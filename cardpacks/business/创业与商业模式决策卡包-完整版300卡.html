@@ -1,0 +1,2767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>创业与商业模式决策卡包 · 300 卡 · 版本 1.0</title>
+<style>
+
+  @page { size: A6; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    background: #e8e5e0;
+    color: #1a1a1a;
+  }
+  .page {
+    width: 105mm;
+    height: 148mm;
+    margin: 16px auto;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1.5px solid #4338CA;
+  }
+  .page::before {
+    content: '';
+    position: absolute;
+    top: -1.5px; left: -1.5px; right: -1.5px;
+    height: 4px;
+    background: #4338CA;
+    z-index: 1;
+  }
+  @media print {
+    body { background: white; }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      width: 100%;
+      height: 148mm;
+      page-break-after: always;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: avoid; }
+    .page::before { display: none; }
+  }
+
+  .cover {
+    background: #EEF2FF;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+    padding: 10mm;
+  }
+  .cover .tag {
+    font-size: 8pt; color: #312E81; background: #E0E7FF;
+    padding: 4px 18px; border-radius: 14px; letter-spacing: 5px; margin-bottom: 18px;
+  }
+  .cover h1 { font-size: 20pt; font-weight: bold; color: #1a1a1a; line-height: 1.4; margin-bottom: 6px; }
+  .cover .sub { font-size: 10pt; color: #5c5852; margin-bottom: 24px; }
+  .cover .meta { font-size: 8.5pt; color: #5c5852; line-height: 2.2; }
+  .cover .studio { position: absolute; bottom: 8mm; font-size: 7pt; color: #b0aba5; letter-spacing: 3px; }
+
+  .txt { padding: 10mm 9mm; display: flex; flex-direction: column; }
+  .txt .bq { font-size: 14pt; font-weight: bold; color: #1a1a1a; line-height: 1.8; margin-bottom: 8px; }
+  .txt .bt { font-size: 9.5pt; color: #5c5852; line-height: 2; margin-bottom: 3px; }
+  .txt .dv { width: 14mm; border-top: 1px solid #4338CA; margin: 8px 0; }
+  .txt .rl { display: flex; gap: 8px; margin-bottom: 6px; font-size: 8.5pt; line-height: 1.8; }
+  .txt .rn { flex-shrink: 0; font-family: Georgia,serif; font-size: 12pt; color: #4338CA; width: 18px; text-align: center; }
+  .txt .rt { color: #5c5852; }
+  .txt .ft { margin-top: auto; font-size: 7pt; color: #b0aba5; text-align: center; letter-spacing: 3px; padding-top: 8px; }
+
+  .intro-page { padding: 11mm 9mm; display: flex; flex-direction: column; }
+  .intro-page .hd { font-size: 15pt; font-weight: bold; color: #1a1a1a; line-height: 1.7; margin-bottom: 10mm; }
+  .intro-page .bt { font-size: 9.5pt; color: #5c5852; line-height: 2.2; margin-bottom: 2px; }
+  .intro-page .dv { width: 14mm; border-top: 1px solid #4338CA; margin: 6mm 0; }
+  .intro-page .pull { font-size: 11pt; font-weight: 500; color: #1a1a1a; line-height: 1.9; padding: 0 0 0 6px; border-left: 2px solid #4338CA; margin-bottom: 6mm; }
+  .intro-page .soft { font-size: 8pt; color: #C7D2FE; font-style: italic; margin-top: auto; text-align: center; }
+  .intro-page .ft { font-size: 7pt; color: #b0aba5; text-align: center; letter-spacing: 3px; padding-top: 6px; }
+
+  .end-page { padding: 11mm 9mm; display: flex; flex-direction: column; justify-content: center; }
+  .end-page h3 { font-size: 15pt; font-weight: bold; color: #1a1a1a; line-height: 1.7; margin-bottom: 6mm; }
+  .end-page .bt { font-size: 9.5pt; color: #5c5852; line-height: 2.2; margin-bottom: 2px; }
+  .end-page .dv { width: 14mm; border-top: 1px solid #4338CA; margin: 5mm 0; }
+  .end-page .pull { font-size: 10pt; font-weight: 500; color: #1a1a1a; line-height: 1.9; padding-left: 8px; border-left: 2px solid #4338CA; margin: 5mm 0; }
+  .end-page .close { font-size: 9pt; color: #5c5852; font-style: italic; line-height: 1.8; margin-top: 8mm; }
+  .end-page .ft { font-size: 7pt; color: #b0aba5; text-align: center; letter-spacing: 3px; margin-top: 8mm; }
+
+  .ch { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 10mm; background: #EEF2FF; }
+  .ch .ci { font-family: Georgia,serif; font-size: 9pt; color: #4338CA; letter-spacing: 4px; margin-bottom: 20px; }
+  .ch .ct { font-size: 20pt; font-weight: bold; color: #1a1a1a; margin-bottom: 8px; }
+  .ch .cd { font-size: 9pt; color: #5c5852; line-height: 2; max-width: 80%; }
+  .ch .cc { color: #4338CA; font-size: 10pt; opacity: 0.4; margin: 14px 0; }
+  .ch .cr { font-size: 7pt; color: #b0aba5; letter-spacing: 3px; }
+
+  .qc { display: flex; flex-direction: column; padding: 8mm 8mm 5mm 8mm; position: relative; }
+  .qc .qh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3mm; }
+  .qc .qt { font-size: 6.5pt; color: #312E81; background: #E0E7FF; padding: 2px 10px; border-radius: 8px; letter-spacing: 2px; }
+  .qc .qn { font-size: 6.5pt; color: #b0aba5; letter-spacing: 2px; }
+  .qc .bn { font-family: Georgia,"Microsoft YaHei",serif; font-size: 28pt; color: #C7D2FE; line-height: 0.85; letter-spacing: 4px; margin-bottom: 2mm; }
+  .qc .qq { font-size: 13pt; font-weight: bold; color: #1a1a1a; line-height: 1.6; margin-bottom: 2mm; }
+  .qc .dk { width: 14mm; border-top: 1px solid #4338CA; margin-bottom: 2mm; }
+  .qc .hh { font-size: 8.5pt; font-weight: 300; color: #5c5852; line-height: 1.7; margin-bottom: 3mm; padding-left: 6px; border-left: 2px solid #C7D2FE; }
+  .qc .qa { flex: 1; min-height: 10mm; background-color: #fff; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='28'%3E%3Cline x1='0' y1='27' x2='1' y2='27' stroke='%23C7D2FE' stroke-width='1'/%3E%3C/svg%3E"); background-size: 100% 28px; background-repeat: repeat-y; }
+
+  .fw { display: flex; flex-direction: column; padding: 8mm 8mm 5mm 8mm; position: relative; background: #F5F6FF; }
+  .fw .qh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3mm; }
+  .fw .qt { font-size: 6.5pt; color: #ffffff; background: #4338CA; padding: 2px 10px; border-radius: 8px; letter-spacing: 2px; }
+  .fw .qn { font-size: 6.5pt; color: #b0aba5; letter-spacing: 2px; }
+  .fw .bn { font-family: Georgia,"Microsoft YaHei",serif; font-size: 24pt; color: #C7D2FE; line-height: 0.85; letter-spacing: 4px; margin-bottom: 2mm; }
+  .fw .fname { font-size: 13pt; font-weight: bold; color: #312E81; line-height: 1.5; margin-bottom: 2mm; }
+  .fw .dk { width: 14mm; border-top: 1px solid #4338CA; margin-bottom: 2mm; }
+  .fw .fdesc { font-size: 8pt; color: #5c5852; line-height: 1.8; margin-bottom: 3mm; }
+  .fw .fit { display: flex; gap: 6px; margin-bottom: 3px; font-size: 8pt; line-height: 1.6; }
+  .fw .fno { flex-shrink: 0; font-family: Georgia,serif; font-size: 11pt; color: #4338CA; width: 16px; text-align: center; font-weight: bold; }
+  .fw .ftx { color: #3a3a3a; }
+  .fw .fnote { margin-top: auto; font-size: 6.5pt; color: #b0aba5; line-height: 1.7; padding-top: 6px; }
+
+  .ce { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 10mm; background: #EEF2FF; }
+  .ce .cs { font-size: 28pt; color: #4338CA; opacity: 0.3; margin-bottom: 16px; }
+  .ce .ct { font-size: 16pt; font-weight: bold; color: #1a1a1a; line-height: 1.8; margin-bottom: 14px; }
+  .ce .cx { font-size: 10pt; color: #5c5852; line-height: 2.4; }
+
+  .copyright-page { padding: 8mm 9mm; display: flex; flex-direction: column; justify-content: center; }
+  .copyright-page h4 { font-size: 12pt; font-weight: bold; color: #1a1a1a; margin-bottom: 4mm; }
+  .copyright-page .dv { width: 14mm; border-top: 1px solid #4338CA; margin: 4mm 0; }
+  .copyright-page .info { font-size: 7.5pt; color: #5c5852; line-height: 2.2; }
+  .copyright-page .info a { color: #312E81; text-decoration: none; word-break: break-all; }
+  .copyright-page .info .label { font-weight: bold; color: #1a1a1a; }
+  .copyright-page .cclogo { font-size: 6.5pt; color: #b0aba5; margin-top: 6mm; line-height: 1.8; }
+  .copyright-page .ft { font-size: 7pt; color: #b0aba5; text-align: center; letter-spacing: 3px; margin-top: 4mm; }
+
+</style>
+</head>
+<body>
+<div class="page cover">
+  <div class="tag">创业与商业模式决策卡包</div>
+  <h1>创业与商业模式<br>决策卡</h1>
+  <div class="sub">300 张决策卡 · 12 大商业主题</div>
+  <div class="meta">从发现机会到商业终局的完整决策框架<br>用苏格拉底式提问<br>帮你在每一个关键路口做出更好的判断。</div>
+  <div class="studio">卡片创作实验室 出品</div>
+</div>
+<div class="page intro-page">
+  <p class="hd">创业的本质，不是找到一个答案，而是学会问对问题。</p>
+  <p class="bt">商业模式画布会告诉你九个格子怎么填，但不会告诉你该填什么。精益创业会告诉你先做 MVP，但不会告诉你这个 MVP 到底该验证哪个假设。</p>
+  <p class="bt">真正决定创业成败的，是你有没有勇气直视那些你一直回避的问题。</p>
+  <div class="dv"></div>
+  <p class="pull">这不是一本答案书。这是一套帮你问出好问题、逼出真判断的工具。</p>
+  <p class="bt">300 张决策卡，覆盖从机会发现到商业终局的完整路径。每张卡不是给你答案，而是逼你直视那些你一直回避的问题。</p>
+  <p class="bt">还有 12 张工具框架卡——商业模式画布、Mom Test、AARRR、护城河矩阵，帮你把散落的判断串成体系。</p>
+  <p class="soft">好的决策，从好的问题开始。</p>
+  <div class="ft">卡片创作实验室 出品</div>
+</div>
+<div class="page txt">
+  <p class="bq" style="margin-bottom:8px">使用说明</p>
+  <div class="rl"><span class="rn">01</span><span class="rt"><strong>每天一张，每张 5 分钟。</strong>拿出今天的卡片，认真读完问题，写下你真实的第一反应。不要修饰，不要敷衍。</span></div>
+  <div class="rl"><span class="rn">02</span><span class="rt"><strong>诚实比正确重要。</strong>这不是考试，没有人打分。如果你连自己都骗，这套卡片帮不了你。</span></div>
+  <div class="rl"><span class="rn">03</span><span class="rt"><strong>可以反复使用。</strong>三个月后再翻同一张卡，你的答案变了——说明你在进步。答案不变，说明你该警惕了。</span></div>
+  <div class="rl"><span class="rn">04</span><span class="rt"><strong>跟团队一起用。</strong>拿出几张关键决策卡，扔到团队会议里。看每个人怎么写，再讨论。你会发现信息差远比想象的大。</span></div>
+  <div class="rl"><span class="rn">05</span><span class="rt"><strong>把答案归档。</strong>回头翻看你六个月前、一年前的决策记录，那是最好的成长日记。</span></div>
+  <div class="dv"></div>
+  <div class="ft">卡片创作实验室 出品</div>
+</div>
+<div class="page copyright-page">
+  <h4>版权声明</h4>
+  <div class="dv"></div>
+  <div class="info">
+    <p><span class="label">产品名称</span>：创业与商业模式决策卡包 · 300 卡 · 版本 1.0</p>
+    <p><span class="label">出品方</span>：卡片创作实验室</p>
+    <p><span class="label">官方网站</span>：<a href="https://www.cnfeat.com/">https://www.cnfeat.com/</a></p>
+    <p><span class="label">开源仓库</span>：<a href="https://github.com/cnfeat/CardPackStudio">https://github.com/cnfeat/CardPackStudio</a></p>
+    <p><span class="label">联系方式</span>：微信 cnfeat</p>
+  </div>
+  <div class="dv"></div>
+  <div class="cclogo">
+    <p>本卡包内容采用 <strong>CC BY-NC-SA 4.0</strong> 许可协议</p>
+    <p>署名 - 非商业性使用 - 相同方式共享</p>
+    <p>最新版请查看开源仓库</p>
+  </div>
+  <div class="ft">卡片创作实验室 出品</div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 01</div>
+  <div class="ct">机会发现</div>
+  <div class="cd">所有的创业都始于一个念头。但这个念头是真实的机会，还是你脑补出来的伪需求？先学会分辨，再谈出发。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 001 - 030</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">001 / 300</span></div>
+  <div class="bn">001</div>
+  <div class="qq">你发现的这个「机会」，是用户真正的痛点，还是你脑补出来的伪需求？</div>
+  <div class="dk"></div>
+  <div class="hh">你能不能找到一个真实的人，说出他因为这个痛点而痛苦的具体时刻？如果找不到，你的机会可能只存在于你的 PPT 里。「我身边很多人都需要」和「我验证过有人愿意为此付费」之间，隔着多少次真实对话？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">002 / 300</span></div>
+  <div class="bn">002</div>
+  <div class="qq">这个问题有多痛？用户现在是怎么忍受它的？</div>
+  <div class="dk"></div>
+  <div class="hh">用户现在用的替代方案是什么？是 Excel、是手动、是干脆不做？「忍一忍就过去了」和「不解决就活不下去」，是完全不同量级的机会。你的目标用户，现在为了绕开这个问题，付出了多少时间、金钱或情绪？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">003 / 300</span></div>
+  <div class="bn">003</div>
+  <div class="qq">你凭什么认为这个机会是你的？别人为什么没做？</div>
+  <div class="dk"></div>
+  <div class="hh">如果这个痛点这么明显、市场这么大，为什么聪明人没有蜂拥而入？是因为他们没看见，还是看见了但发现做不成？你比别人多知道的那一点，到底是什么？是信息差、技术差，还是纯粹的一厢情愿？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">004 / 300</span></div>
+  <div class="bn">004</div>
+  <div class="qq">这个需求是「应该有」还是「必须有」？</div>
+  <div class="dk"></div>
+  <div class="hh">用户说「这个功能不错」和「没有它我活不下去」，你听到的是同一个意思吗？「应该有」是锦上添花，「必须有」是雪中送炭。你的产品，卖的是哪种？当预算紧张时，用户会先砍掉哪一类产品？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">005 / 300</span></div>
+  <div class="bn">005</div>
+  <div class="qq">你是在追风口，还是在解决问题？</div>
+  <div class="dk"></div>
+  <div class="hh">把你想法里所有的流行词（AI、Web3、元宇宙、出海）都去掉，剩下的那个问题还成立吗？如果答案是「不成立」，那你在追的就不是机会，是情绪。风口会过去，问题会留下来——你押注的是哪一个？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">006 / 300</span></div>
+  <div class="bn">006</div>
+  <div class="qq">这个机会的天花板在哪里？你能算出市场有多大吗？</div>
+  <div class="dk"></div>
+  <div class="hh">「市场很大」是一句空话。你能说出目标用户的数量级吗？是十万、百万还是千万？你能说出他们每年在这个问题上花多少钱吗？如果你连市场规模的上下限都估不出来，你凭什么判断值不值得做？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">007 / 300</span></div>
+  <div class="bn">007</div>
+  <div class="qq">谁是你的第一个用户？他叫什么名字？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你说不出第一个愿意付费的用户具体是谁，说明你还没有真正接触过市场。一个具体的人，比一万个抽象的「目标用户画像」都更有价值。你能在今天之内，找到并联系上这个「第一个用户」吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">008 / 300</span></div>
+  <div class="bn">008</div>
+  <div class="qq">你为什么是现在做，而不是三年前，或者三年后？</div>
+  <div class="dk"></div>
+  <div class="hh">为什么时机是现在？是技术刚成熟、成本刚降下来，还是政策刚放开、用户习惯刚养成？如果三年前做太早、三年后做太晚，那「现在」的窗口期，你凭什么判断它真的开着？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">009 / 300</span></div>
+  <div class="bn">009</div>
+  <div class="qq">这个机会的可验证性有多高？</div>
+  <div class="dk"></div>
+  <div class="hh">你的核心假设，能不能用最低成本的方式快速证伪？「用户会喜欢」不是一个可验证的假设，「用户会在 30 天内为它付费」才是。你愿不愿意在投入大资源之前，先设计一个能打脸的实验？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">010 / 300</span></div>
+  <div class="bn">010</div>
+  <div class="qq">你愿意为验证这个想法付出什么代价？</div>
+  <div class="dk"></div>
+  <div class="hh">如果这个想法最后证明是错的，你能接受失去什么？时间、金钱、还是面子？那些不肯为验证付出任何代价的人，最后往往在市场上付出了更大的代价。你的止损线画在哪里？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">011 / 300</span></div>
+  <div class="bn">011</div>
+  <div class="qq">如果这个想法失败了，最可能的原因是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">现在就预演失败：是需求不存在、是执行太差、是竞争太强，还是钱烧完了？如果你能提前说出最可能的死法，你就知道自己该优先补哪一块短板。你创业路上最大的那颗雷，埋在哪里？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">012 / 300</span></div>
+  <div class="bn">012</div>
+  <div class="qq">你是在解决自己的问题，还是别人的问题？</div>
+  <div class="dk"></div>
+  <div class="hh">很多创始人都是「自己的第一个用户」。但如果你不是目标用户，你对问题的理解就隔了一层。「我痛过」是优势，「我以为他们痛」是幻觉。你现在的这个需求，是你亲身痛过，还是听来的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">013 / 300</span></div>
+  <div class="bn">013</div>
+  <div class="qq">这个痛点的频次有多高？是每天、每月，还是一生一次？</div>
+  <div class="dk"></div>
+  <div class="hh">高频痛点才有复购和粘性，低频痛点只能做一锤子买卖。你的用户多久会遇到一次这个问题？如果是「一生一次」的婚礼、买房，你靠什么养活一个持续运营的生意？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">014 / 300</span></div>
+  <div class="bn">014</div>
+  <div class="qq">用户为了这个问题，已经花了多少钱或多少时间？</div>
+  <div class="dk"></div>
+  <div class="hh">花钱和时间，是衡量痛点强度的最硬指标。如果用户现在分文未花、只是口头抱怨，那说明问题还没痛到要解决的地步。用户现有的「土办法」，成本是多少？你的方案能把这个成本降下来吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">015 / 300</span></div>
+  <div class="bn">015</div>
+  <div class="qq">有没有人已经在用「土办法」解决这个问题？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你的用户已经在用 Excel、微信群、纸笔、甚至雇了个兼职在解决这个问题，那反而是好事——说明需求真实存在。你的机会，是把这些「土办法」产品化。你现在要替代的，是用户哪个「土办法」？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">016 / 300</span></div>
+  <div class="bn">016</div>
+  <div class="qq">你的机会是基于技术红利，还是基于需求洞察？</div>
+  <div class="dk"></div>
+  <div class="hh">技术红利会消失，需求洞察会沉淀。如果支撑你机会的是「AI 现在能做这个了」，那 AI 能力再强一点，或者竞争对手也用上 AI，你的优势还在吗？需求侧的变化，才是更持久的护城河。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">017 / 300</span></div>
+  <div class="bn">017</div>
+  <div class="qq">三年后这个机会还存在吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果三年后这个需求消失了，你的创业就只是一场短跑。政策会变、技术会迭代、用户的习惯会迁移。你的机会是结构性的长期趋势，还是一次性的短期窗口？你愿意为「三年后还在」付出什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">018 / 300</span></div>
+  <div class="bn">018</div>
+  <div class="qq">你是在找「好做的」，还是「值得做的」？</div>
+  <div class="dk"></div>
+  <div class="hh">「好做」的事，往往因为门槛低，早就挤满了人。「值得做」的事，往往因为难，反而留出了空白。你现在盯上的机会，是因为它简单而选它，还是因为它的价值足够大，大到值得你啃下那些硬骨头？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">019 / 300</span></div>
+  <div class="bn">019</div>
+  <div class="qq">这个市场是在增长，还是在萎缩？</div>
+  <div class="dk"></div>
+  <div class="hh">在增长的市场里，即使你做得很平庸，也可能被大潮带着往前走。在萎缩的市场里，即使你是最优秀的，也可能逆水行舟。你所处的这个市场，是涨潮还是退潮？你能拿出什么数据来证明？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">020 / 300</span></div>
+  <div class="bn">020</div>
+  <div class="qq">你观察到的机会，有多少是「幸存者偏差」？</div>
+  <div class="dk"></div>
+  <div class="hh">你看到的成功案例，只是活下来的那部分。那些死在半路的创业者，你看见了吗？当一个赛道看起来「大家都在赚钱」时，很可能只是死掉的人你没看见。你凭什么认为，自己会站在幸存者那一侧？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">021 / 300</span></div>
+  <div class="bn">021</div>
+  <div class="qq">你的直觉和你的数据打架时，你信谁？</div>
+  <div class="dk"></div>
+  <div class="hh">很多伟大的机会，最初都违背当时的「数据共识」。但更多的失败，也是死于忽视数据。你怎么区分「天才的直觉」和「愚蠢的执念」？你现在对这个机会的判断，有多少来自真实的观察，多少来自自我说服？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">022 / 300</span></div>
+  <div class="bn">022</div>
+  <div class="qq">如果只能选一个用户痛点来解决，你会砍掉哪些？</div>
+  <div class="dk"></div>
+  <div class="hh">创业初期最大的错误，是想一次性解决所有问题。如果让你从现在的方案里砍掉 80% 的功能，只留最核心的那一个痛点，你会留哪个？你的用户愿意为这「一个」痛点买单吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">023 / 300</span></div>
+  <div class="bn">023</div>
+  <div class="qq">这个机会的护城河在哪里？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你一上线，巨头或者更聪明的团队明天就来抄，你挡得住吗？你的护城河是数据、网络效应、品牌，还是你独特的认知？如果答案是「他们懒得抄」，那你要担心的不是竞争，是这个机会本身可能太小。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">024 / 300</span></div>
+  <div class="bn">024</div>
+  <div class="qq">你是不是在用「新概念」包装一个「旧需求」？</div>
+  <div class="dk"></div>
+  <div class="hh">把「知识付费」说成「认知升级」，把「团购」说成「社交电商」，需求本身并没有变。真正的创新，是解决了新的问题，而不是给旧问题换个新名字。你的机会，经得起把包装拆掉后的审视吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">025 / 300</span></div>
+  <div class="bn">025</div>
+  <div class="qq">这个需求是显性的，还是隐性的？</div>
+  <div class="dk"></div>
+  <div class="hh">显性需求人人看得见，早就被做烂了。隐性需求藏在用户的抱怨、勉强和将就里，用户自己都未必说得清。你要解决的需求，用户能自己说出口吗？还是需要你去观察、去翻译他们没说出口的那部分？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">026 / 300</span></div>
+  <div class="bn">026</div>
+  <div class="qq">你验证过这个想法吗，还是只在脑子里跑过一遍？</div>
+  <div class="dk"></div>
+  <div class="hh">「我觉得行」和「市场告诉我行」之间，隔着无数次真实的接触。你最近一次和潜在用户面对面聊这个想法，是什么时候？他们听完后的第一反应是什么——是追问细节，还是礼貌地点头？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">027 / 300</span></div>
+  <div class="bn">027</div>
+  <div class="qq">你是在复制别人的成功，还是找到了别人没看见的东西？</div>
+  <div class="dk"></div>
+  <div class="hh">「某某在美国做成了，我在中国抄一个」是路径，不是洞察。复制的红利在于执行，洞察的红利在于认知。你现在的机会，如果纯粹是复制，你凭什么比原版和本地已有的竞品做得更好？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">028 / 300</span></div>
+  <div class="bn">028</div>
+  <div class="qq">机会的窗口期有多长？你能在窗口关闭前跑多远？</div>
+  <div class="dk"></div>
+  <div class="hh">窗口期是「别人还没反应过来」到「市场已经饱和」之间的时间。你有多少时间？半年还是一年？以你现在的资源和人手，你能在窗口期内完成验证、做出产品、跑通模型吗？如果不能，你该加速，还是该换一个窗口更长的机会？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">机会发现</span><span class="qn">029 / 300</span></div>
+  <div class="bn">029</div>
+  <div class="qq">如果今天必须放弃这个想法，你最舍不得的是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">认真想想这个问题。你舍不得的是它真实的价值，还是你已经投入的沉没成本？「舍不得」里藏着的，往往是你对这个机会最诚实的判断。那个让你死抓着不放的东西，到底值多少钱？</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">030 / 300</span></div>
+  <div class="bn">030</div>
+  <div class="fname">机会三问：痛点 · 方案 · 市场</div>
+  <div class="dk"></div>
+  <div class="fdesc">一个念头能不能成为创业机会，用三层过滤。任何一层不通过，都该回头重新审视。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">痛点验证：这个问题真实存在吗？有多痛？频次多高？用户现在怎么解决？</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">方案验证：你的方案真的能解决它吗？比现有「土办法」好多少？好到用户愿意换？</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">市场验证：有足够多的人愿意为此付费吗？付费意愿能支撑起一个可持续的生意吗？</span></div>
+  <div class="fnote">三层验证按顺序推进，不要跳过。一个不痛的痛点，配再好的方案也是伪需求；一个没有付费意愿的市场，配再痛的需求也是公益。</div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 02</div>
+  <div class="ct">市场与用户</div>
+  <div class="cd">机会再大，也要落到一个个具体的人身上。你的用户是谁、他们在哪、他们为什么买单，决定了一切。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 031 - 060</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">031 / 300</span></div>
+  <div class="bn">031</div>
+  <div class="qq">你的目标用户，用一句话说清楚是谁？</div>
+  <div class="dk"></div>
+  <div class="hh">不能说「所有人」「中小企业」「年轻人」——这些都是偷懒的答案。试着精确到：某个城市、某个职业、某个年龄段、正在经历某个具体困境的人。你的答案越具体，说明你越了解市场；越笼统，说明你越是在拍脑袋。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">032 / 300</span></div>
+  <div class="bn">032</div>
+  <div class="qq">你在为「买得起的人」设计，还是在为「用得到的人」设计？</div>
+  <div class="dk"></div>
+  <div class="hh">买单的人和使用的人，可能是两拨人。给企业做培训软件，用的是员工，买的是老板。你了解的是哪一个？如果你的产品使用者和付费者不是同一个人，你分别满足他们各自的什么诉求？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">033 / 300</span></div>
+  <div class="bn">033</div>
+  <div class="qq">你的用户画像里，有几个是你真的聊过的人？</div>
+  <div class="dk"></div>
+  <div class="hh">用户画像是从真实的人里提炼的，不是坐在办公室里编出来的。你最近一个月，和多少个真实的目标用户深度聊过？如果这个数字是零，你画像里的一切都只是你的想象。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">034 / 300</span></div>
+  <div class="bn">034</div>
+  <div class="qq">你的市场，是大众市场还是利基市场？</div>
+  <div class="dk"></div>
+  <div class="hh">大众市场大而分散，获客贵、竞争烈；利基市场小而集中，容易切入但天花板低。你现在的选择是什么？一个足够小的利基市场，能不能成为你撬动更大市场的支点？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">035 / 300</span></div>
+  <div class="bn">035</div>
+  <div class="qq">你的 TAM、SAM、SOM 分别是多少？</div>
+  <div class="dk"></div>
+  <div class="hh">TAM（总市场）、SAM（可服务市场）、SOM（可获取市场）——这三个数字你算过吗？很多创始人张口就是 TAM 几百亿，却连 SOM 都说不清。你第一年能切到的那块蛋糕，到底有多大？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">036 / 300</span></div>
+  <div class="bn">036</div>
+  <div class="qq">用户的痛点，是他「说出来」的，还是你「看出来」的？</div>
+  <div class="dk"></div>
+  <div class="hh">用户说出来的往往是愿望，不是痛点。「我想要更快的马」背后，真正的需求是「更快到达」。你有没有观察过用户的真实行为，而不是只听他们怎么说？行为，永远比语言诚实。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">037 / 300</span></div>
+  <div class="bn">037</div>
+  <div class="qq">你的用户现在在哪里聚集？</div>
+  <div class="dk"></div>
+  <div class="hh">他们混哪个社区、看哪个博主、参加哪个社群、用哪个工具？如果你不知道去哪找你的用户，你的获客成本就会高到可怕。你现在能具体说出三个「用户聚集地」吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">038 / 300</span></div>
+  <div class="bn">038</div>
+  <div class="qq">谁是你「不想服务」的用户？</div>
+  <div class="dk"></div>
+  <div class="hh">知道不服务谁，和知道服务谁一样重要。如果来了一个用户，需求明显跑偏，你敢不敢拒绝？敢拒绝，说明你有清晰的定位；来者不拒，说明你的产品会很快变成一锅乱炖。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">039 / 300</span></div>
+  <div class="bn">039</div>
+  <div class="qq">你了解用户的一天吗？</div>
+  <div class="dk"></div>
+  <div class="hh">从起床到睡觉，你的目标用户一天是怎么过的？在哪个时间点、什么场景下，他会遇到你解决的那个问题？如果你描绘不出用户的一天，你做的产品就很难嵌入他的生活。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">040 / 300</span></div>
+  <div class="bn">040</div>
+  <div class="qq">用户的决策链有多长？谁是最终的拍板人？</div>
+  <div class="dk"></div>
+  <div class="hh">B 端产品尤其如此：采购、审批、使用、付款，可能是四个人。你了解这条决策链上的每一环吗？谁发起、谁评估、谁拍板、谁买单？你只搞定了使用的人，能不能搞定付钱的人？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">041 / 300</span></div>
+  <div class="bn">041</div>
+  <div class="qq">你的用户为什么「现在」还没解决这个问题？</div>
+  <div class="dk"></div>
+  <div class="hh">是不知道有方案，还是觉得太贵，还是不相信别人，还是懒得折腾？搞清楚「现在还没解决」的原因，比搞清楚「问题本身」更重要，因为它直接决定了你的切入点。你卡在用户不行动的哪个环节上？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">042 / 300</span></div>
+  <div class="bn">042</div>
+  <div class="qq">早期用户里，谁是最愿意尝鲜的那批人？</div>
+  <div class="dk"></div>
+  <div class="hh">不是所有人都愿意用新产品。真正会先试用的，是那些被痛点折磨得最深、或者天生爱尝鲜的人。你能识别出这批「创新者」和「早期采用者」吗？你的第一批用户，打算从哪个群体里挖？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">043 / 300</span></div>
+  <div class="bn">043</div>
+  <div class="qq">你做过用户访谈吗？还是只发过问卷？</div>
+  <div class="dk"></div>
+  <div class="hh">问卷能告诉你「什么」，访谈才能告诉你「为什么」。你有没有坐在一个真实用户对面，听他讲他完整的故事，追问到「为什么」的第三层？你最近一次深度访谈，挖出了什么问卷里从没出现过的东西？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">044 / 300</span></div>
+  <div class="bn">044</div>
+  <div class="qq">用户嘴上说的，和钱包投票的，一致吗？</div>
+  <div class="dk"></div>
+  <div class="hh">「我觉得这个挺好」和「我愿意付 99 块」之间，隔着一条鸿沟。你有没有测过用户的真实付费意愿？有多少人嘴上说要，最后真掏钱的？这个落差，就是理想和现实的差距。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">045 / 300</span></div>
+  <div class="bn">045</div>
+  <div class="qq">你的产品是卖给「个人」还是「组织」？</div>
+  <div class="dk"></div>
+  <div class="hh">2C 和 2B 是两套完全不同的逻辑：决策速度、付费周期、获客方式、客户关系，全都不同。你清楚自己站在哪一边吗？还是想「两头通吃」，结果两头都不讨好？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">046 / 300</span></div>
+  <div class="bn">046</div>
+  <div class="qq">你的目标用户，会因为什么而「愤怒」地离开？</div>
+  <div class="dk"></div>
+  <div class="hh">知道用户的底线在哪里，才能守住底线。是数据泄露、是涨价、是功能砍掉、还是服务变差？如果有一件事能让你的核心用户集体出走，那是什么？你现在的做法，会不会正在触碰这条红线？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">047 / 300</span></div>
+  <div class="bn">047</div>
+  <div class="qq">你的市场里有「参照物」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户能不能拿你的产品，跟某个他已经熟悉的东西做类比？「就像用 XX 一样简单」——这个类比能极大地降低理解成本。你的产品，用户会用哪个熟悉的东西来理解它？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">048 / 300</span></div>
+  <div class="bn">048</div>
+  <div class="qq">你调研的用户，和你的付费用户，是同一批人吗？</div>
+  <div class="dk"></div>
+  <div class="hh">调研时夸你好的人，和真正掏钱的人，经常不是同一拨。你是在跟「会说好听话的人」聊天，还是在跟「真的会买单的人」聊？你有没有接触过那些曾经用过又离开的用户？他们的话往往最值钱。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">049 / 300</span></div>
+  <div class="bn">049</div>
+  <div class="qq">你的用户「愿意推荐」你的概率有多大？</div>
+  <div class="dk"></div>
+  <div class="hh">净推荐值（NPS）背后是真实的口碑。假设产品上线了，你的用户会不会主动推荐给他的朋友？如果他连推荐都不愿意，说明产品还没解决真问题。你凭什么让用户愿意当你的「自来水」？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">050 / 300</span></div>
+  <div class="bn">050</div>
+  <div class="qq">市场的「教育成本」你承担得起吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果用户根本不知道「自己需要这个」，你要先花大力气教育市场。教育市场的钱，通常比想象的多一个数量级。你是打算自己教育市场，还是找一个已经被教育好的市场切入？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">051 / 300</span></div>
+  <div class="bn">051</div>
+  <div class="qq">你的用户是「价格敏感」还是「价值敏感」？</div>
+  <div class="dk"></div>
+  <div class="hh">价格敏感的用户，一降价就涌来，一涨价就离开，毫无忠诚。价值敏感的用户，只要真的解决他的问题，贵一点也愿意。你瞄准的是哪类用户？你现在的定位，吸引的是哪类人？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">052 / 300</span></div>
+  <div class="bn">052</div>
+  <div class="qq">你有没有「过度调研」而不自知？</div>
+  <div class="dk"></div>
+  <div class="hh">调研是手段，不是目的。有些人调研了三个月，做了 50 份访谈，还是不敢动手。数据永远不完美，你需要的不是更多信息，而是「足够做出下一步判断」的信息。你现在缺的是信息，还是行动的勇气？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">053 / 300</span></div>
+  <div class="bn">053</div>
+  <div class="qq">用户的真实需求，和你想卖的功能，是一回事吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户买的是「墙上的洞」，不是「电钻」。你盯着的到底是那个洞，还是你手里的电钻？很多产品死掉，是因为创始人爱上了自己的功能，忘了用户要的是结果。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">054 / 300</span></div>
+  <div class="bn">054</div>
+  <div class="qq">你了解用户的「放弃成本」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果用户用了你的产品一年，再想换到别家，他要付出什么代价？数据迁移、重新学习、工作流重建？放弃成本越高，用户越难走。你的产品，有没有在帮用户「沉淀」那些让他舍不得离开的东西？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">055 / 300</span></div>
+  <div class="bn">055</div>
+  <div class="qq">你是在服务「你喜欢的用户」，还是「喜欢你的用户」？</div>
+  <div class="dk"></div>
+  <div class="hh">这两群人可能完全不同。你喜欢的高端用户，可能根本看不上你的产品；而真正为你付费、给你反馈的，可能是一群你从没想过的朴素用户。你愿意听谁的？市场会用脚投票。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">056 / 300</span></div>
+  <div class="bn">056</div>
+  <div class="qq">你的市场调研，有没有被「确认偏误」污染？</div>
+  <div class="dk"></div>
+  <div class="hh">你只挑支持自己观点的数据看，只找夸你的用户聊，这叫确认偏误。你有没有主动去收集那些「反例」——说你的想法不行的用户、失败的竞品、不买账的市场？那些反例，你打算怎么面对？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">057 / 300</span></div>
+  <div class="bn">057</div>
+  <div class="qq">用户流失前，有没有给你留下任何信号？</div>
+  <div class="dk"></div>
+  <div class="hh">用户不会突然消失，他们在流失前会先减少使用、不再打开、不再续费。你有没有想过要监控这些「流失预警信号」？你打算靠什么指标，提前发现一个用户快要走了？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">058 / 300</span></div>
+  <div class="bn">058</div>
+  <div class="qq">你的「市场规模」是拍脑袋的，还是算出来的？</div>
+  <div class="dk"></div>
+  <div class="hh">「全国有 5 亿白领，每人花 100 块就是 500 亿」——这种算法是最常见的自欺。真实的市场规模，要从「你真正能触达、愿意付费的那部分人」倒推。你算市场规模时，有没有给自己灌水？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">市场与用户</span><span class="qn">059 / 300</span></div>
+  <div class="bn">059</div>
+  <div class="qq">如果市场比你想的小十倍，你还做吗？</div>
+  <div class="dk"></div>
+  <div class="hh">压力测试一下：如果真实市场只有你预估的十分之一，你的生意还成立吗？如果答案是否定的，那你要么高估了市场，要么选错了切入点。一个诚实的创业者，会先想清楚「最坏情况」下的生意还成不成立。</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">060 / 300</span></div>
+  <div class="bn">060</div>
+  <div class="fname">TAM · SAM · SOM 三层市场测算</div>
+  <div class="dk"></div>
+  <div class="fdesc">别用「几百亿大市场」麻醉自己，一层层缩小，直到算出你真正能吃到的那块蛋糕。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">TAM 总市场：这个需求的所有潜在规模（用来讲故事，说明天花板）。</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">SAM 可服务市场：你能用现有产品和渠道真正触达的那部分（用来定方向）。</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">SOM 可获取市场：以你的资源和时间，第一年实际能拿下的份额（用来算生意）。</span></div>
+  <div class="fnote">投资人爱听 TAM，但你该盯着 SOM 过日子。SOM 太小，说明切入点不对；SOM 算不出，说明你根本没想清楚怎么获客。</div>
+</div>
+<div class="page ce">
+  <div class="cs">*</div>
+  <div class="ct">你已经完成了<br>60 张卡片</div>
+  <div class="cx">
+    <p>发现与市场，是创业的起点。</p>
+    <p>一个被验证过的真实痛点，</p>
+    <p>胜过一百个自嗨的宏大叙事。</p>
+  </div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 03</div>
+  <div class="ct">需求验证</div>
+  <div class="cd">「用户说需要」不等于「用户会买单」。这一章，教你用最少的成本，戳破自己最珍惜的假设。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 061 - 090</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">061 / 300</span></div>
+  <div class="bn">061</div>
+  <div class="qq">你现在的核心假设是什么？能用一句话写下来吗？</div>
+  <div class="dk"></div>
+  <div class="hh">「用户会喜欢我的产品」不是假设，是愿望。真正的假设是「某类用户因为某个痛点，愿意为某个方案付出某个代价」。你能把你的假设写成一句可证伪的话吗？写不出来，说明你还没想清楚自己在赌什么。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">062 / 300</span></div>
+  <div class="bn">062</div>
+  <div class="qq">你是在验证需求，还是在验证「有人夸你」？</div>
+  <div class="dk"></div>
+  <div class="hh">给朋友看你的想法，他们碍于情面会说「不错」。给陌生用户看，他们才会说实话。你最近一次的「验证」，对象是朋友还是陌生人？得到的是客套还是行动？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">063 / 300</span></div>
+  <div class="bn">063</div>
+  <div class="qq">你的验证成本，是不是高到你不敢做？</div>
+  <div class="dk"></div>
+  <div class="hh">如果验证需要你先花 100 万做出完整产品，那你其实不是在验证，是在赌博。真正聪明的验证，是花几百块、几天时间，就能看出方向的。你能想到一个「便宜到无法拒绝」的验证方式吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">064 / 300</span></div>
+  <div class="bn">064</div>
+  <div class="qq">用户说「我会买」，你信了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">「我会买」是验证里最不可信的一句话。人们说的时候真心，掏钱的时候犹豫。真正硬的验证，是让用户「现在就掏钱」——哪怕是一块钱的预付款，都比一百句「我会买」有价值。你测过真金白银吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">065 / 300</span></div>
+  <div class="bn">065</div>
+  <div class="qq">你有没有设计一个「证伪实验」？</div>
+  <div class="dk"></div>
+  <div class="hh">大多数人只想证明自己是对的，于是拼命找证据。真正的验证，是主动设计一个能让自己「被打脸」的实验。如果实验证明了你是错的，你会怎么办？你有没有给自己留这条退路？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">066 / 300</span></div>
+  <div class="bn">066</div>
+  <div class="qq">用户在用「土办法」硬扛，你看见了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你发现用户在用 Excel、微信群、纸笔、甚至花钱请人手动解决这个问题，那是最强的需求信号。你现在要解决的这个问题，有没有这样的「土办法」存在？如果有，它就是你最真实的竞品。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">067 / 300</span></div>
+  <div class="bn">067</div>
+  <div class="qq">你验证的是「痒点」还是「痛点」？</div>
+  <div class="dk"></div>
+  <div class="hh">痒点是「有更好」，痛点是「没有不行」。用户对痒点的付费意愿极低，对痛点的付费意愿极高。你现在的需求，是让用户更舒服一点，还是帮他拔掉一根刺？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">068 / 300</span></div>
+  <div class="bn">068</div>
+  <div class="qq">你的「预注册」数据，有多少会变成真用户？</div>
+  <div class="dk"></div>
+  <div class="hh">落地页上有 1000 人点了「感兴趣」，最后可能只有 10 个人真的用。你有没有算过从「感兴趣」到「真付费」的转化率？不要被顶部的漏斗入口数字骗了，盯着底部看。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">069 / 300</span></div>
+  <div class="bn">069</div>
+  <div class="qq">你问用户的方式，是在引导他夸你吗？</div>
+  <div class="dk"></div>
+  <div class="hh">「你觉得这个 App 怎么样？」和「你上次遇到这个问题是怎么解决的？」是两个完全不同的问题。前者让用户客套，后者让用户回忆事实。你的提问，是在挖事实，还是在求认同？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">070 / 300</span></div>
+  <div class="bn">070</div>
+  <div class="qq">需求验证失败的信号，你敢承认吗？</div>
+  <div class="dk"></div>
+  <div class="hh">当数据、反馈、用户行为都在说「不」，你还在找理由解释吗？「用户太保守」「市场还没被教育好」「再改改就好了」——这些是不是你常用的借口？诚实地面对失败，比再坚持三个月更省命。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">071 / 300</span></div>
+  <div class="bn">071</div>
+  <div class="qq">你的第一批「种子用户」，够不够「狠」？</div>
+  <div class="dk"></div>
+  <div class="hh">找几个对你客气的人来试用，是最浪费时间的验证。你需要的是那些挑剔、直接、会说「这他妈不行」的用户。你身边有没有这样的人？你敢不敢把产品交给他们，而不是交给夸你的朋友？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">072 / 300</span></div>
+  <div class="bn">072</div>
+  <div class="qq">验证一个需求，你打算用「访谈」还是「试卖」？</div>
+  <div class="dk"></div>
+  <div class="hh">访谈只能知道「想不想要」，试卖才能知道「愿不愿意掏钱」。很多创始人停在访谈阶段就以为自己验证了。你打算什么时候把产品放到一个能「真实成交」的场景里？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">073 / 300</span></div>
+  <div class="bn">073</div>
+  <div class="qq">用户「不买」的沉默，你读懂了没有？</div>
+  <div class="dk"></div>
+  <div class="hh">用户不买，不一定是不喜欢，可能是「没听懂」「不信任」「嫌贵」「用不上」。你有没有追问过那些「不买的人」为什么？他们拒绝的原因，往往比购买者夸你的原因更有价值。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">074 / 300</span></div>
+  <div class="bn">074</div>
+  <div class="qq">你的需求，是「一次性」还是「持续性」？</div>
+  <div class="dk"></div>
+  <div class="hh">一次性需求，你永远在找新客户；持续性需求，你才有复购和积累。用户解决完这个问题之后，还会再遇到吗？还是说，你这辈子只能赚他一次钱？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">075 / 300</span></div>
+  <div class="bn">075</div>
+  <div class="qq">你有没有用「最小可行」的方式测试过付费意愿？</div>
+  <div class="dk"></div>
+  <div class="hh">还没做产品，也可以先做一个简单的预售页、一个众筹、一个咨询单。用户的真实付费行为，比任何访谈都硬。你在做出完整产品之前，能不能先收到第一笔钱？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">076 / 300</span></div>
+  <div class="bn">076</div>
+  <div class="qq">验证时，你区分「想要」和「需要」了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">「想要」是欲望，「需要」是刚需。用户会为「需要」持续付费，只会为「想要」偶尔冲动消费。你的产品解决的是用户的哪个层次？这个层次，能不能撑起稳定的现金流？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">077 / 300</span></div>
+  <div class="bn">077</div>
+  <div class="qq">你给自己设的「验证成功标准」够硬吗？</div>
+  <div class="dk"></div>
+  <div class="hh">「有一些用户感兴趣」太软了。硬标准是数字：多少转化、多少付费、多少留存、多少复购。你验证成功的那一刻，具体要看哪个数字到达多少？如果没到这个数，你敢说「验证失败」吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">078 / 300</span></div>
+  <div class="bn">078</div>
+  <div class="qq">需求验证里，你听到的「不」，够多吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果一路验证下来全是「好好好」，要么你验证的对象错了，要么你在自欺。好的验证，一定会收获大量的「不」和「犹豫」。你最近听到的「不」，是什么？它告诉了你什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">079 / 300</span></div>
+  <div class="bn">079</div>
+  <div class="qq">你在验证「产品能做出来」，还是在验证「有人要」？</div>
+  <div class="dk"></div>
+  <div class="hh">「技术上能做出来」和「市场需要它」是两回事。很多技术人一头扎进「能不能做」，忘了问「该不该做」。你现在花最多时间的，是前者还是后者？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">080 / 300</span></div>
+  <div class="bn">080</div>
+  <div class="qq">你的需求，会不会只是「疫情/风口」催出来的假象？</div>
+  <div class="dk"></div>
+  <div class="hh">特殊时期的需求，可能随着环境恢复正常而消失。你现在的需求，是长期结构性的，还是被某个短期事件推高的？如果那个外部条件没了，你的生意还剩什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">081 / 300</span></div>
+  <div class="bn">081</div>
+  <div class="qq">你有没有在「用户说」和「用户做」之间找差距？</div>
+  <div class="dk"></div>
+  <div class="hh">用户说「我每天都用」，打开数据一看每周才用一次。用户说「太贵了」，转头买了更贵的竞品。你有没有用真实的行为数据，去核对用户嘴上说的话？差距越大，你越要看行为。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">082 / 300</span></div>
+  <div class="bn">082</div>
+  <div class="qq">验证需求，你找了「对的人」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">找错访谈对象，是最常见的验证失败。你想服务的是小白用户，却去问了专业人士；你想做企业市场，却问了个人消费者。你的访谈对象，和你的目标付费用户，是不是同一批人？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">083 / 300</span></div>
+  <div class="bn">083</div>
+  <div class="qq">你的需求假设，能不能反着来问？</div>
+  <div class="dk"></div>
+  <div class="hh">「如果这个产品明天没了，用户会怎样？」「如果涨价一倍，还有多少人买？」「如果只保留一个功能，用户还要吗？」这些反着问的问题，能撕掉需求的伪装。你敢反问自己哪一条？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">084 / 300</span></div>
+  <div class="bn">084</div>
+  <div class="qq">你验证需求的节奏，是「快」还是「拖」？</div>
+  <div class="dk"></div>
+  <div class="hh">验证拖得越久，你投入的感情越多，越舍不得放弃。给自己一个明确的时间盒：两周内必须得到「做还是不做」的结论。你的验证，有没有一个硬性的 deadline？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">085 / 300</span></div>
+  <div class="bn">085</div>
+  <div class="qq">你的用户「愿意花时间」配合你验证吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果用户连 15 分钟的访谈都不愿意参加，说明这个需求对他们来说根本不重要。真正痛的用户，会追着你倾诉。你找用户验证时，是你在求他们，还是他们在倒苦水？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">086 / 300</span></div>
+  <div class="bn">086</div>
+  <div class="qq">你验证过「付费门槛」有多高吗？</div>
+  <div class="dk"></div>
+  <div class="hh">免费试用的人多，不代表付费的人多。你有没有测过，把价格从免费提到 9 块、99 块、999 块，用户会流失多少？价格是最诚实的验证工具，它能让所有「伪需求」现形。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">087 / 300</span></div>
+  <div class="bn">087</div>
+  <div class="qq">你是在验证需求，还是在给自己找「继续做」的理由？</div>
+  <div class="dk"></div>
+  <div class="hh">很多人嘴上说验证，心里早就决定了要做，验证只是为了给自己壮胆。诚实地问：如果你的验证结果是不做，你真的会停吗？如果不会，那你所谓的验证毫无意义。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">088 / 300</span></div>
+  <div class="bn">088</div>
+  <div class="qq">需求验证的结论，你敢写下来并署名吗？</div>
+  <div class="dk"></div>
+  <div class="hh">把你验证的结论、依据、数据写下来，签上名字和日期。三个月后回看，你会看到自己当时的判断有多靠谱或多离谱。写下来，是防止自我欺骗的最简单方法。你敢不敢？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">需求验证</span><span class="qn">089 / 300</span></div>
+  <div class="bn">089</div>
+  <div class="qq">你区分过「早期采用者」和「主流用户」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">早期采用者愿意忍受不完美，主流用户要求产品成熟稳定。你在验证阶段听到的反馈，很可能来自前者，但你的生意要成的，是后者。你现在的验证对象，是愿意陪你折腾的尝鲜者，还是挑剔的主流用户？两者的反馈，你分得清哪个更该听吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">090 / 300</span></div>
+  <div class="bn">090</div>
+  <div class="fname">Mom Test：别让妈妈骗了你</div>
+  <div class="dk"></div>
+  <div class="fdesc">一套避免「用户碍于情面说好话」的访谈方法，核心是只问过去的事实，不问对未来的看法。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">问过去，不问未来：「你上次是怎么解决这个问题的」，而不是「你会用我的产品吗」。</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">问细节，不问感受：「为了这个花了多少钱、多少时间」，而不是「你觉得这个怎么样」。</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">聊问题，不聊方案：先确认痛点存在，再提你的方案，否则用户会顺着你的话说。</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">盯行为，不听承诺：用户说「会买」不算数，只有掏钱或付出行动才算数。</span></div>
+  <div class="fnote">核心口诀：凡是「我会…」「我可能…」的回答都要打折；凡是「我上次…」「我花了…」的回答都要深挖。</div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 04</div>
+  <div class="ct">价值主张与定位</div>
+  <div class="cd">用户买的不是功能，是「为什么选你」。你能不能用一句话，说清楚你的独特价值，并让用户相信？</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 091 - 120</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">091 / 300</span></div>
+  <div class="bn">091</div>
+  <div class="qq">你的价值主张，能一句话说清楚吗？</div>
+  <div class="dk"></div>
+  <div class="hh">「我们是一个帮助企业提高效率的平台」——这是一句废话。好的价值主张是：为「谁」解决「什么问题」，带来「什么具体结果」，为什么「比别人好」。你的一句话说全了吗？说给陌生人听，他三秒内能懂吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">092 / 300</span></div>
+  <div class="bn">092</div>
+  <div class="qq">用户为了你的产品，放弃了什么？</div>
+  <div class="dk"></div>
+  <div class="hh">用户选择你，意味着放弃了别的方案。你是在跟什么竞争？是竞品、是「不解决」、还是用户的「惯性」？只有搞清楚用户放弃的是什么，你才知道自己真正的对手是谁。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">093 / 300</span></div>
+  <div class="bn">093</div>
+  <div class="qq">你的「独特」是真的独特，还是自以为是？</div>
+  <div class="dk"></div>
+  <div class="hh">「我们更用心」「我们体验更好」——这些话每个创始人都说，用户一个都不信。你的差异化，是用户能感知、能验证、愿付钱的那种吗？能不能用一个具体的、可对比的点来证明？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">094 / 300</span></div>
+  <div class="bn">094</div>
+  <div class="qq">用户能「复述」你的价值主张吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果用户听了你的介绍，转述给朋友时说的和你完全不一样，说明你的定位失败了。你有没有测过：用户用了你的产品后，会怎么向别人介绍你？那句「用户版」的话，是你想要的吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">095 / 300</span></div>
+  <div class="bn">095</div>
+  <div class="qq">你的价值主张，是「功能」还是「结果」？</div>
+  <div class="dk"></div>
+  <div class="hh">「我们的 App 有 20 个功能」是功能，「帮你每天省下 2 小时」是结果。用户买的是结果，不是功能。你的价值主张，落在功能层还是结果层？你帮用户省了时间、赚了钱，还是省了麻烦？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">096 / 300</span></div>
+  <div class="bn">096</div>
+  <div class="qq">你是在「卖产品」，还是在「卖身份」？</div>
+  <div class="dk"></div>
+  <div class="hh">很多人买东西，买的是「我是什么样的人」。买特斯拉的不只是买车，买的是「我是创新者」的身份认同。你的产品，能让用户觉得「用了它，我就成了某种更好的自己」吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">097 / 300</span></div>
+  <div class="bn">097</div>
+  <div class="qq">你的定位，是「窄」还是「泛」？</div>
+  <div class="dk"></div>
+  <div class="hh">「我们服务所有企业」等于没定位。定位越窄，越锋利，越容易被记住。你敢不敢说「我们只服务某个具体的细分人群」？砍掉大部分客户，换来一小撮人的死忠，你敢吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">098 / 300</span></div>
+  <div class="bn">098</div>
+  <div class="qq">你的产品，能放进用户已有的「心智格子」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户的大脑里已经塞满了分类。你是一个「更便宜的 X」「更快的 Y」，还是一个全新的、用户从没听说过的品类？如果是后者，教育成本会高到可怕。你打算占据哪个心智格子？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">099 / 300</span></div>
+  <div class="bn">099</div>
+  <div class="qq">竞品的价值主张是什么？你的凭什么赢？</div>
+  <div class="dk"></div>
+  <div class="hh">把前三个竞品的一句价值主张列出来，你的和它们比，差异在哪？如果用户把四张卡片并排看，能一眼看出你的不同吗？还是说，你们看起来都差不多，最后只能拼价格？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">100 / 300</span></div>
+  <div class="bn">100</div>
+  <div class="qq">你的「信任状」是什么？用户凭什么信你？</div>
+  <div class="dk"></div>
+  <div class="hh">光说「我们最好」没用，你要拿出证据：案例、数据、背书、客户名单、评测、专利。你手里有哪些能让用户「当场信服」的证据？如果一样都没有，你的价值主张就是空中楼阁。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">101 / 300</span></div>
+  <div class="bn">101</div>
+  <div class="qq">你的价值主张，和你的「定价」匹配吗？</div>
+  <div class="dk"></div>
+  <div class="hh">你说自己「高端专业」，却卖 9.9 块，用户不会信。你说自己「极致便宜」，却卖 9999，用户扭头就走。你的定位和定价，是自洽的，还是互相打架？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">102 / 300</span></div>
+  <div class="bn">102</div>
+  <div class="qq">你有没有「反定位」——明确说「我不做谁」？</div>
+  <div class="dk"></div>
+  <div class="hh">「我们不做低端市场」「我们不服务个人用户」——这种「不做」的宣言，反而能强化定位。你清楚自己「不做」什么吗？敢不敢把它公开说出来？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">103 / 300</span></div>
+  <div class="bn">103</div>
+  <div class="qq">用户「不选你」的理由，你调查过吗？</div>
+  <div class="dk"></div>
+  <div class="hh">你盯着「选我的人」研究，却很少问「不选我的人」为什么。那些看了你的产品但最终买了竞品的人，理由是什么？这个理由，恰恰是你定位里最薄弱的环节。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">104 / 300</span></div>
+  <div class="bn">104</div>
+  <div class="qq">你的价值主张，在「一次传播」里能活下来吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果用户只能发一句话给朋友推荐你，那句话会是什么？如果这句话不能自己传播、需要你反复解释，那你的定位就太复杂了。你的一句话推荐语，是什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">105 / 300</span></div>
+  <div class="bn">105</div>
+  <div class="qq">你在「比功能」，还是在「比体验」？</div>
+  <div class="dk"></div>
+  <div class="hh">功能可以被抄袭，体验很难被复制。当竞品把功能抄到一模一样时，用户为什么还留在你这里？是习惯、是情感、是服务，还是别的什么？你押注的，是不是一个抄不走的东西？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">106 / 300</span></div>
+  <div class="bn">106</div>
+  <div class="qq">你的价值主张，经得起「删除测试」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">把你价值主张里的形容词全删掉——「极致」「领先」「专业」——剩下的那个东西还立得住吗？如果删掉形容词后空无一物，说明你的价值主张还没想清楚。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">107 / 300</span></div>
+  <div class="bn">107</div>
+  <div class="qq">你了解用户「感知价值」和「实际成本」的差距吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户愿意付的钱，取决于他感知到的价值，而不是你的成本。你的产品，用户「觉得」值多少钱？和你的定价差多少？这个差距，就是你要讲的故事有多大说服力。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">108 / 300</span></div>
+  <div class="bn">108</div>
+  <div class="qq">你的定位，是「跟随」还是「对立」？</div>
+  <div class="dk"></div>
+  <div class="hh">跟老大做一样的定位，你永远是老二。聪明的后来者，往往选择「对立定位」：老大说快，你说稳；老大说便宜，你说高端。你现在的定位，是跟随老大，还是和他对着干？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">109 / 300</span></div>
+  <div class="bn">109</div>
+  <div class="qq">你的价值主张，和团队的「基因」匹配吗？</div>
+  <div class="dk"></div>
+  <div class="hh">你说自己「技术领先」，团队里却一个技术牛人都没有；你说自己「懂用户」，创始人却从不下场接触用户。定位和基因不匹配，就是自欺欺人。你的团队，撑得起你吹的定位吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">110 / 300</span></div>
+  <div class="bn">110</div>
+  <div class="qq">用户是「需要你」，还是「喜欢你」？</div>
+  <div class="dk"></div>
+  <div class="hh">「需要」是理性的、可替代的，「喜欢」是感性的、有粘性的。当有一个更便宜的选择出现，需要你的用户会走，喜欢你的用户会留。你现在的用户关系，是「需要」还是「喜欢」？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">111 / 300</span></div>
+  <div class="bn">111</div>
+  <div class="qq">你的价值主张，能扛住「更便宜的对手」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果明天有人做一个你产品 60 分的山寨版，卖你十分之一的价格，你的用户会不会走？如果会走，说明你的价值主张里没有「价格以外」的东西。那个让用户不走的理由，是什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">112 / 300</span></div>
+  <div class="bn">112</div>
+  <div class="qq">你是在做「品类第一」，还是「品类里的一个」？</div>
+  <div class="dk"></div>
+  <div class="hh">「第一个做某事」是很好的定位，用户只记得第一名。你所在的领域，有没有一个「你是第一」的切面？哪怕是很小的一个细分，你能做那个细分里的第一名吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">113 / 300</span></div>
+  <div class="bn">113</div>
+  <div class="qq">你的价值主张，会不会「说一套做一套」？</div>
+  <div class="dk"></div>
+  <div class="hh">你说「用户至上」，却在用户遇到问题时找不到客服；你说「简单易用」，产品却复杂得要命。用户会用脚投票。你对外宣传的，和实际交付的，中间隔着多大的裂缝？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">114 / 300</span></div>
+  <div class="bn">114</div>
+  <div class="qq">你测试过「定位假设」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">定位不是拍脑袋定的，是可以 A/B 测试的。同一个产品，换个说法、换个人群、换个价格，转化率可能差好几倍。你测过不同的价值主张，哪个更打动用户吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">115 / 300</span></div>
+  <div class="bn">115</div>
+  <div class="qq">你的价值主张，是「今天有效」还是「长期成立」？</div>
+  <div class="dk"></div>
+  <div class="hh">靠低价吸引来的用户，价格一涨就走；靠风口吸引来的用户，风口一过就散。你的价值主张，能不能穿越周期？三年后，用户还会因为同样的理由选你吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">116 / 300</span></div>
+  <div class="bn">116</div>
+  <div class="qq">你敢不敢把「不做的事」写进产品原则？</div>
+  <div class="dk"></div>
+  <div class="hh">定位的本质是取舍。你把「我们要做什么」和「我们坚决不做什么」都写清楚了吗？如果团队里每个人都能说出「这不是我们该做的」，你的定位才算真正立住了。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">117 / 300</span></div>
+  <div class="bn">117</div>
+  <div class="qq">你的用户，会因为「失去你」而痛苦吗？</div>
+  <div class="dk"></div>
+  <div class="hh">想象你的产品明天永久下线。用户是会难过、会寻找替代品，还是会毫无感觉？这个「失去你的痛苦程度」，就是你价值主张最诚实的试金石。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">118 / 300</span></div>
+  <div class="bn">118</div>
+  <div class="qq">你的价值主张，是「自己人听得懂、外人听不懂」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">你和团队天天聊，当然觉得自己的定位很清楚。但拉一个完全陌生的潜在用户来听，他三秒内能听懂吗？如果你需要五分钟铺垫才能解释清楚，说明你的价值主张还没被「翻译」成用户的语言。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">价值主张与定位</span><span class="qn">119 / 300</span></div>
+  <div class="bn">119</div>
+  <div class="qq">你是在「教育用户理解你」，还是「说用户听得懂的话」？</div>
+  <div class="dk"></div>
+  <div class="hh">很多产品失败，是因为坚持用「行业黑话」教育用户，而不是放下身段、用大白话讲清楚「对你有什么用」。你的官网、宣传语、产品文案，用的是用户的词，还是你自己的词？</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">120 / 300</span></div>
+  <div class="bn">120</div>
+  <div class="fname">价值主张画布</div>
+  <div class="dk"></div>
+  <div class="fdesc">用一张图对齐「你要做的」和「用户要的」，找到真正能击中用户的那个契合点。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">用户任务：用户想完成什么？功能性、社会性、情感性任务分别是什么？</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">用户痛点：完成任务过程中，哪些障碍、风险、负面情绪在困扰他？</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">用户收益：用户期待的结果、惊喜、甚至没明说但想要的附加价值？</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">匹配区：你的产品和服务，如何「止痛」+「增益」，覆盖以上三点？</span></div>
+  <div class="fnote">先填「用户侧」再填「产品侧」。如果产品侧填出来和用户侧对不上，说明你在自嗨，不是在做产品。</div>
+</div>
+<div class="page ce">
+  <div class="cs">*</div>
+  <div class="ct">你已经完成了<br>120 张卡片</div>
+  <div class="cx">
+    <p>发现、市场、验证、定位，</p>
+    <p>这四关走完，你才真正拥有了一个</p>
+    <p>值得投入资源去做的方向。</p>
+  </div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 05</div>
+  <div class="ct">产品设计</div>
+  <div class="cd">方向对了，还要把产品做对。好产品不是功能堆出来的，是一刀一刀砍出来的。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 121 - 150</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">121 / 300</span></div>
+  <div class="bn">121</div>
+  <div class="qq">你的产品，用户第一次用时能「秒懂」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户在 30 秒内能不能理解你的产品是干嘛的、怎么用？如果第一次打开就懵了，他大概率不会再给你第二次机会。你有没有找个完全陌生的人，冷启动测试一下你的产品？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">122 / 300</span></div>
+  <div class="bn">122</div>
+  <div class="qq">你的产品最核心的「一个功能」是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">如果把所有功能砍到只剩一个，用户还能完成他最核心的任务吗？那个「一个功能」是什么？很多产品之所以平庸，就是因为不敢砍，什么都想留。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">123 / 300</span></div>
+  <div class="bn">123</div>
+  <div class="qq">你是在设计「功能」，还是在设计「流程」？</div>
+  <div class="dk"></div>
+  <div class="hh">用户要的不是一堆孤立的功能，而是一条顺畅的流程：从「想解决某个问题」到「问题被解决」。你把用户的完整旅程走通了吗？中间有没有卡顿、断层、需要用户自己想办法的地方？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">124 / 300</span></div>
+  <div class="bn">124</div>
+  <div class="qq">你的产品，是「能用」还是「好用」？</div>
+  <div class="dk"></div>
+  <div class="hh">能用是及格线，好用才是竞争力。你有没有量化过用户完成核心任务需要几步、多少秒？每多一步，就多流失一批人。你最后一次为了「少让用户点一下」而较劲，是什么时候？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">125 / 300</span></div>
+  <div class="bn">125</div>
+  <div class="qq">功能上线后，你真的会看数据吗？</div>
+  <div class="dk"></div>
+  <div class="hh">很多功能上线后就成了「僵尸功能」，没人用也没人管。你有没有追踪每个功能的使用率？如果某个功能 80% 的用户从不用，你敢不敢把它砍掉？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">126 / 300</span></div>
+  <div class="bn">126</div>
+  <div class="qq">你是在「听用户的话」，还是「替用户做主」？</div>
+  <div class="dk"></div>
+  <div class="hh">用户会要一堆功能，但往往不知道自己真正要什么。乔布斯说「用户不知道自己要什么，直到你给他看」。你分得清什么时候该听、什么时候该坚持自己的判断吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">127 / 300</span></div>
+  <div class="bn">127</div>
+  <div class="qq">你的产品「删掉什么」比「加什么」更重要，你同意吗？</div>
+  <div class="dk"></div>
+  <div class="hh">加功能是顺着惯性，删功能才需要判断力。你最近一次主动砍掉一个功能，是什么时候？如果很久没砍过，说明你可能在盲目堆砌。你的产品，有什么功能是「当初加了、现在想删」的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">128 / 300</span></div>
+  <div class="bn">128</div>
+  <div class="qq">产品的「关键路径」，你优化到极致了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户从注册到体验到「啊哈时刻」，中间要走几步？每一步都在流失人。你测过这条关键路径的转化漏斗吗？哪一步流失最严重？你有没有死磕过那一步？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">129 / 300</span></div>
+  <div class="bn">129</div>
+  <div class="qq">你的产品，有没有一个清晰的「啊哈时刻」？</div>
+  <div class="dk"></div>
+  <div class="hh">用户第一次真正感受到产品价值的那个瞬间，叫「啊哈时刻」。你希望用户在哪一刻爱上你的产品？如果设计不出来这个瞬间，用户来了也留不住。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">130 / 300</span></div>
+  <div class="bn">130</div>
+  <div class="qq">你是在做「功能齐全」，还是做「恰到好处」？</div>
+  <div class="dk"></div>
+  <div class="hh">功能齐全的产品，往往每个功能都平庸。恰到好处的产品，把少数几个功能做到极致。你的产品，是想讨好所有人，还是想惊艳少数人？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">131 / 300</span></div>
+  <div class="bn">131</div>
+  <div class="qq">产品的「反馈」，给用户的是确定感吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户点一个按钮，有没有立即的反馈？加载有没有提示？错误有没有解释？不确定感是体验的第一杀手。你的产品，有没有让用户「心里没底」的地方？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">132 / 300</span></div>
+  <div class="bn">132</div>
+  <div class="qq">你了解用户「离开」的原因吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户来了又走，你知不知道为什么？是没看懂、是卡住了、是觉得没用、还是太贵？你有没有一个机制，去收集「流失用户」的真实原因？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">133 / 300</span></div>
+  <div class="bn">133</div>
+  <div class="qq">你的产品设计，是「拍脑袋」还是「有依据」？</div>
+  <div class="dk"></div>
+  <div class="hh">每个功能背后，是基于用户数据、调研、还是老板的喜好？如果团队里有人问「为什么做这个功能」，你能给出数据支撑吗？还是只能说「我觉得」？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">134 / 300</span></div>
+  <div class="bn">134</div>
+  <div class="qq">你是在「迭代」，还是在「返工」？</div>
+  <div class="dk"></div>
+  <div class="hh">迭代是基于验证的持续优化，返工是没想清楚就推倒重来。你最近的一次改动，是在原来基础上的小步快跑，还是把上一版推翻重做？如果频繁返工，问题不在执行，在没想清楚。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">135 / 300</span></div>
+  <div class="bn">135</div>
+  <div class="qq">产品的「复杂度」，是必须的还是偷懒的？</div>
+  <div class="dk"></div>
+  <div class="hh">复杂往往是懒惰的结果——懒得抽象、懒得梳理、懒得砍。用户能感受到的复杂度，每一分都在劝退。你的产品里，有哪些复杂度是「我们自己方便」而不是「用户需要」？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">136 / 300</span></div>
+  <div class="bn">136</div>
+  <div class="qq">你考虑过「新手」和「老手」两种用户吗？</div>
+  <div class="dk"></div>
+  <div class="hh">新手需要引导，老手需要效率。一个为老手优化的产品，可能把新手拒之门外；一个为新手设计的产品，可能让老手觉得啰嗦。你现在的产品，偏向了哪一边？忽略了哪一边？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">137 / 300</span></div>
+  <div class="bn">137</div>
+  <div class="qq">你的产品，在移动端和桌面端体验一致吗？</div>
+  <div class="dk"></div>
+  <div class="hh">很多用户会在手机上看到你，在电脑上使用你，或者反过来。你的产品在两个端上的体验，是割裂的还是连贯的？你有没有亲自在两个端都完整走一遍？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">138 / 300</span></div>
+  <div class="bn">138</div>
+  <div class="qq">你在产品里「留白」了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">好的设计懂得克制，把空间留给最重要的东西。如果你的界面塞得满满当当，用户根本不知道看哪。你的产品，有没有「留白」的勇气，还是什么都想往首屏堆？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">139 / 300</span></div>
+  <div class="bn">139</div>
+  <div class="qq">你的产品，能「离线」或者「弱网」下用吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户在电梯里、地铁上、信号差的地方打开你的产品，是白屏还是能用？如果你的用户经常在弱网环境，你考虑过吗？这些真实的使用场景，比你在办公室里的测试重要得多。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">140 / 300</span></div>
+  <div class="bn">140</div>
+  <div class="qq">你「自己」是不是产品的重度用户？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你自己都不用、都不爱用自己的产品，凭什么指望用户喜欢？很多创始人产品上线后自己都不碰。你每天花在自己产品上的时间，有多少？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">141 / 300</span></div>
+  <div class="bn">141</div>
+  <div class="qq">产品的「第一印象」，你花心思了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户打开 App 的前几秒，决定了 80% 的去留。图标、启动页、欢迎页、第一个界面——这些「门面」你打磨过吗？还是把精力都花在了用户根本看不到的后台？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">142 / 300</span></div>
+  <div class="bn">142</div>
+  <div class="qq">你有没有「过度设计」而不自知？</div>
+  <div class="dk"></div>
+  <div class="hh">为了一个用户根本不在乎的细节，纠结一整天——这叫过度设计。你的时间花在刀刃上了吗？还是花在了那些「看起来很重要、其实没人关心」的地方？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">143 / 300</span></div>
+  <div class="bn">143</div>
+  <div class="qq">产品里的每个字，你都「较真」过吗？</div>
+  <div class="dk"></div>
+  <div class="hh">文案是产品的一部分。一个「确定」和「好的」的区别，一个按钮上的措辞，都能影响转化。你的产品文案，是精心打磨过的，还是随便写写的？你有没有为一句文案纠结过？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">144 / 300</span></div>
+  <div class="bn">144</div>
+  <div class="qq">你的产品，敢不敢「只做一件事」？</div>
+  <div class="dk"></div>
+  <div class="hh">真正伟大的产品，往往只做好一件事，然后不断变强。你的产品现在做了几件事？如果砍到只剩一件，那一件事能不能做到行业顶尖？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">145 / 300</span></div>
+  <div class="bn">145</div>
+  <div class="qq">你在设计「产品」，还是在设计「自己的玩具」？</div>
+  <div class="dk"></div>
+  <div class="hh">有些创始人做的是「自己喜欢的东西」，而不是「用户需要的东西」。你怎么区分这两者？当你的喜好和用户的需求冲突时，你选哪个？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">146 / 300</span></div>
+  <div class="bn">146</div>
+  <div class="qq">产品的「可扩展性」，你在设计时就考虑了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">今天加一个功能要改 20 个地方，说明架构没设计好。但过度设计架构，又会让早期变慢。你在这两者之间找到平衡了吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">147 / 300</span></div>
+  <div class="bn">147</div>
+  <div class="qq">你有没有「用户测试」的习惯？</div>
+  <div class="dk"></div>
+  <div class="hh">把产品丢给真实用户，坐在旁边看他们操作，是最快的发现问题的方式。你上一次做用户测试是什么时候？你看到用户在哪个地方卡住了，然后改掉了吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">148 / 300</span></div>
+  <div class="bn">148</div>
+  <div class="qq">产品的「容错」设计得够不够好？</div>
+  <div class="dk"></div>
+  <div class="hh">用户会犯错：误删、误点、填错。你的产品有没有撤销、确认、恢复的机制？一次不可挽回的错误，可能让用户永远离开。你的产品，会不会让用户「一步错、步步错」？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">产品设计</span><span class="qn">149 / 300</span></div>
+  <div class="bn">149</div>
+  <div class="qq">你的产品，有没有「一致的设计语言」？</div>
+  <div class="dk"></div>
+  <div class="hh">按钮风格、颜色、间距、文案语气——这些细节的一致，决定了产品「专业」还是「粗糙」。用户说不出哪里不对，但会直觉觉得「这产品不靠谱」。你的产品，从一个页面跳到另一个页面，体验是连贯的还是割裂的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">150 / 300</span></div>
+  <div class="bn">150</div>
+  <div class="fname">Kano 模型：功能的优先级排序</div>
+  <div class="dk"></div>
+  <div class="fdesc">不是所有功能都值得做。用 Kano 模型区分功能的类型，把资源花在刀刃上。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">必备型：没有它用户会暴怒，但有了也不会更满意（登录、支付）。——及格线，做好即可。</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">期望型：做得越好用户越满意，越差越不满意（速度、稳定性）。——持续投入的重点。</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">魅力型：有了是惊喜，没有也不失望（彩蛋、智能推荐）。——差异化来源，但要控制数量。</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">无差异型：做不做用户都无感。——坚决砍掉，别浪费资源。</span></div>
+  <div class="fnote">先补必备型，再投入期望型，用魅力型制造惊喜，砍掉无差异型。别把资源浪费在用户根本不在乎的功能上。</div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 06</div>
+  <div class="ct">MVP 与迭代</div>
+  <div class="cd">MVP 不是「做个半成品」，而是「用最小成本验证最关键的假设」。做得快不是目的，学得快才是。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 151 - 180</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">151 / 300</span></div>
+  <div class="bn">151</div>
+  <div class="qq">你的 MVP，到底要验证哪个「唯一的假设」？</div>
+  <div class="dk"></div>
+  <div class="hh">MVP 最大的错误，是想同时验证太多东西。你的 MVP 只该验证一个最关键的、最不确定的假设。那个假设是什么？如果连这个都说不清，你的 MVP 就是在瞎忙。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">152 / 300</span></div>
+  <div class="bn">152</div>
+  <div class="qq">你的 MVP，是不是做得太「完整」了？</div>
+  <div class="dk"></div>
+  <div class="hh">很多人嘴上的 MVP，实际做成了一个功能齐全的半成品。真正的 MVP，应该简陋到让你自己都有点不好意思。你的 MVP 是不是太重了？能不能再砍掉一半？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">153 / 300</span></div>
+  <div class="bn">153</div>
+  <div class="qq">你在用 MVP「学」，还是在用 MVP「炫」？</div>
+  <div class="dk"></div>
+  <div class="hh">MVP 的目的是学习，不是展示。如果你花在「打磨界面」上的时间，比花在「收集反馈」上的还多，说明你搞反了。你的 MVP 上线后，你最想学到的是什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">154 / 300</span></div>
+  <div class="bn">154</div>
+  <div class="qq">MVP 的「成功标准」，你提前定好了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">没有标准，MVP 做出来也不知道算不算成功。你上 MVP 之前，有没有写清楚「达到什么数据算通过、达不到就放弃」？这个标准，是上线前定的，还是上线后才找补的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">155 / 300</span></div>
+  <div class="bn">155</div>
+  <div class="qq">你的 MVP 能「一周内」做出来吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果做一个 MVP 要三个月，那它就不是 MVP。你能不能把范围缩到一周内能交付的程度？哪怕是用现成工具拼凑、哪怕丑一点，只要能跑起来验证，就够。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">156 / 300</span></div>
+  <div class="bn">156</div>
+  <div class="qq">你在用「真代码」做 MVP，还是「假验证」？</div>
+  <div class="dk"></div>
+  <div class="hh">在 MVP 阶段，能用落地页验证的就不用写代码，能用人工服务的就不用做系统。你有没有「花三个月写了个用户根本不用的 App」的经历？下次能不能先用更轻的方式试？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">157 / 300</span></div>
+  <div class="bn">157</div>
+  <div class="qq">MVP 上线后，你每天看什么数据？</div>
+  <div class="dk"></div>
+  <div class="hh">别只看下载量和注册数，那些是虚荣指标。你要盯的是「可行动指标」：激活率、留存率、付费率。你现在每天看的是哪个？它能不能指导你下一步该做什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">158 / 300</span></div>
+  <div class="bn">158</div>
+  <div class="qq">你是在「快速迭代」，还是「快速瞎折腾」？</div>
+  <div class="dk"></div>
+  <div class="hh">迭代要有方向，每次改动的依据是用户的反馈和数据，而不是你的心情。你最近三次改动，分别是因为什么？如果说不出来，你可能只是在瞎折腾。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">159 / 300</span></div>
+  <div class="bn">159</div>
+  <div class="qq">用户反馈来了，你「怎么处理」它？</div>
+  <div class="dk"></div>
+  <div class="hh">收到反馈不等于采纳反馈。你有没有一套方法，把零散的反馈归类、去重、判断优先级？还是谁嗓门大就听谁的？你最该听的，是反馈背后的「真问题」。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">160 / 300</span></div>
+  <div class="bn">160</div>
+  <div class="qq">你的「迭代周期」是多久？</div>
+  <div class="dk"></div>
+  <div class="hh">如果一次迭代要一个月，你学习的速度就太慢了。能不能把周期压到一周、甚至几天？小步快跑的关键，是「步」真的够小、够快。你上次发布一个改动，距离现在多久了？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">161 / 300</span></div>
+  <div class="bn">161</div>
+  <div class="qq">你有没有「砍掉 MVP」的勇气？</div>
+  <div class="dk"></div>
+  <div class="hh">MVP 验证失败了，你敢不敢直接放弃，而不是「再救一下」？沉没成本会让你越陷越深。你心里有没有一条线：数据跌破什么值，就果断止损？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">162 / 300</span></div>
+  <div class="bn">162</div>
+  <div class="qq">MVP 的「范围」是谁说了算？</div>
+  <div class="dk"></div>
+  <div class="hh">如果 MVP 的范围是「老板想要的」+「客户催的」+「团队觉得该有的」拼出来的，那它一定臃肿。谁有权力对功能说「不」？你有没有一个「MVP 该砍什么」的最终拍板人？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">163 / 300</span></div>
+  <div class="bn">163</div>
+  <div class="qq">你在 MVP 阶段，就考虑「规模化」了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">MVP 阶段过度考虑规模化，会拖慢速度；完全不管，后面要推倒重来。你分得清「现在必须做」和「以后再说」吗？哪些技术债，是你可以先欠着的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">164 / 300</span></div>
+  <div class="bn">164</div>
+  <div class="qq">你的 MVP，是「给用户用的」还是「给投资人看的」？</div>
+  <div class="dk"></div>
+  <div class="hh">有些 MVP 是做得漂漂亮亮给投资人 demo 的，不是给用户解决真问题的。你现在的 MVP，如果用户看到，会真的用起来吗？还是只有演示时看起来很美？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">165 / 300</span></div>
+  <div class="bn">165</div>
+  <div class="qq">你「收集反馈」的渠道通畅吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户想吐槽，找得到入口吗？有没有一键反馈、在线客服、社群？如果用户有意见却无处可说，你损失的不仅是反馈，还有他们的耐心。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">166 / 300</span></div>
+  <div class="bn">166</div>
+  <div class="qq">你在「听少数人的声音」，还是在「看多数人的行为」？</div>
+  <div class="dk"></div>
+  <div class="hh">少数活跃用户嗓门大，但可能不代表大多数。你有没有同时看沉默的大多数在做什么？他们的行为数据，往往比那 5% 的活跃用户更能说明问题。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">167 / 300</span></div>
+  <div class="bn">167</div>
+  <div class="qq">迭代时，你「一次改一件事」还是「一次改一堆」？</div>
+  <div class="dk"></div>
+  <div class="hh">一次改太多，出了问题都不知道是哪个改动引起的。你有没有养成「一次只动一个变量」的习惯？这样数据变化了，你才知道归因到哪。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">168 / 300</span></div>
+  <div class="bn">168</div>
+  <div class="qq">MVP 的数据，有没有「噪音」？</div>
+  <div class="dk"></div>
+  <div class="hh">样本太小、时间太短，数据可能是噪音。你有没有被「第一天的数据」冲昏过头？还是说，你会等数据稳定、样本足够大才下结论？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">169 / 300</span></div>
+  <div class="bn">169</div>
+  <div class="qq">你在「迭代产品」，还是在「迭代想法」？</div>
+  <div class="dk"></div>
+  <div class="hh">有时候产品怎么改都没用，问题出在根本的想法上。你是死磕产品细节，还是愿意回头质疑最初的需求假设？当数据连续几周都差，你反思过是「做错了」还是「想错了」吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">170 / 300</span></div>
+  <div class="bn">170</div>
+  <div class="qq">MVP 阶段，你「亲力亲为」了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">MVP 阶段，创始人应该冲在最前面：亲自做客服、亲自聊用户、亲自看数据。你有没有躲在团队后面，只看二手汇报？创业早期，离用户越近，学得越快。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">171 / 300</span></div>
+  <div class="bn">171</div>
+  <div class="qq">你有没有「过度依赖 MVP 数据」？</div>
+  <div class="dk"></div>
+  <div class="hh">MVP 数据只能证明「有没有戏」，不能证明「一定成」。一个小样本的正反馈，可能是偶然。你分得清「值得继续投入」和「已经被验证成功」的区别吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">172 / 300</span></div>
+  <div class="bn">172</div>
+  <div class="qq">你的「技术债」，是在可控地欠，还是失控地堆？</div>
+  <div class="dk"></div>
+  <div class="hh">MVP 阶段欠技术债是正常的，但要记下来、有计划地还。你现在的代码，是一团乱麻，还是「乱但知道哪里乱」？如果团队走了一个人，代码还维护得了吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">173 / 300</span></div>
+  <div class="bn">173</div>
+  <div class="qq">迭代的目标，是「更好」还是「更对」？</div>
+  <div class="dk"></div>
+  <div class="hh">「更好」是在错误的方向上优化，「更对」是找到正确的方向。你现在是在把产品做得更漂亮，还是在把方向调得更准？这两者，哪个是你当前最缺的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">174 / 300</span></div>
+  <div class="bn">174</div>
+  <div class="qq">你有没有「迭代的复盘」？</div>
+  <div class="dk"></div>
+  <div class="hh">每次迭代完，有没有花 10 分钟复盘：这次改了什么、数据怎么变、学到什么、下次怎么做？没有复盘，迭代就是在重复踩坑。你上次复盘，是什么时候？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">175 / 300</span></div>
+  <div class="bn">175</div>
+  <div class="qq">MVP 的用户「太少」，你怎么破局？</div>
+  <div class="dk"></div>
+  <div class="hh">MVP 需要用户来用，但冷启动最难。你打算怎么找到第一批几十个种子用户？是发帖、是混社群、是朋友推荐，还是别的？你现在有没有一个具体的「拉来前 50 个用户」的计划？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">176 / 300</span></div>
+  <div class="bn">176</div>
+  <div class="qq">你是在「追求完美」，还是在「追求反馈」？</div>
+  <div class="dk"></div>
+  <div class="hh">MVP 最怕完美主义。你总觉得「还不完善，再等等再发」，结果一直不发。真正该做的，是尽早把不完美的东西丢出去换反馈。你那个「还差一点」的 MVP，卡了多久了？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">177 / 300</span></div>
+  <div class="bn">177</div>
+  <div class="qq">迭代的「依据」，是数据还是感觉？</div>
+  <div class="dk"></div>
+  <div class="hh">「我感觉用户会喜欢」和「数据显示用户留存提升」是两回事。你最近一次做产品决策，依据是数据还是感觉？感觉不是不能用，但要诚实地区分「我有数据」和「我在赌」。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">178 / 300</span></div>
+  <div class="bn">178</div>
+  <div class="qq">你的 MVP，是「最简」还是「最糙」？</div>
+  <div class="dk"></div>
+  <div class="hh">「最简」是砍到只剩核心，「最糙」是敷衍了事。MVP 可以不美、可以少功能，但不能让用户觉得「这产品有 bug、不靠谱」。你的 MVP，是「简陋但可用」，还是「粗糙到让人失去信任」？这条线，你守住了吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">MVP 与迭代</span><span class="qn">179 / 300</span></div>
+  <div class="bn">179</div>
+  <div class="qq">你有没有「量化」MVP 的验证结果？</div>
+  <div class="dk"></div>
+  <div class="hh">「感觉还不错」不是验证结果。你的 MVP 上线后，有没有一组明确的数据来判断成败：多少人激活、多少人留存、多少人付费？没有数字的「还不错」，等于没验证。你的验证结论，能用一个数字说出来吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">180 / 300</span></div>
+  <div class="bn">180</div>
+  <div class="fname">Build-Measure-Learn 循环</div>
+  <div class="dk"></div>
+  <div class="fdesc">精益创业的核心闭环：不是「做完了就赢」，而是「每循环一次就更懂一点」。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">Build 构建：用最小的成本，做出一个能验证假设的最小版本（MVP）。</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">Measure 度量：收集真实的行为数据，而不是用户嘴上说的话。</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">Learn 学习：从数据里得出结论——假设成立、推翻、还是需要调整。</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">Pivot / Persevere 转向或坚持：基于学习，决定继续、转向，还是放弃。</span></div>
+  <div class="fnote">循环越快，学得越快。创业不是一次冲刺，而是无数次「构建—度量—学习」的快速旋转。慢的循环，是最大的隐性成本。</div>
+</div>
+<div class="page ce">
+  <div class="cs">*</div>
+  <div class="ct">你已经完成了<br>180 张卡片</div>
+  <div class="cx">
+    <p>从想法到产品，是最长的一段路。</p>
+    <p>砍掉一个功能需要勇气，</p>
+    <p>但正是这种勇气，成就了好产品。</p>
+  </div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 07</div>
+  <div class="ct">竞争分析</div>
+  <div class="cd">别装作没有对手。真正的竞争分析，不是列一张竞品表，而是看清你在和谁抢用户、抢资源、抢时间。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 181 - 210</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">181 / 300</span></div>
+  <div class="bn">181</div>
+  <div class="qq">谁是你真正的竞争对手？</div>
+  <div class="dk"></div>
+  <div class="hh">别只说那几个同赛道的名字。你的对手还包括：用户现在用的「土办法」、用户的「不行动」、以及一切抢走用户时间和预算的东西。你最大的对手，可能根本不在你列的竞品表里。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">182 / 300</span></div>
+  <div class="bn">182</div>
+  <div class="qq">你做过竞品的「深度体验」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">把前三个竞品亲自用一遍、买一遍、甚至投诉一遍，你才知道它们的软肋在哪。你上一次真正深入使用竞品，是什么时候？还是只在网上看了几篇评测就下结论？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">183 / 300</span></div>
+  <div class="bn">183</div>
+  <div class="qq">竞品的「用户」怎么看他们？</div>
+  <div class="dk"></div>
+  <div class="hh">去竞品的评论区、社群、投诉渠道看看，用户夸什么、骂什么。那些「骂」的点，就是你的机会；那些「夸」的点，就是你要跨越的门槛。你了解竞品用户的真实口碑吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">184 / 300</span></div>
+  <div class="bn">184</div>
+  <div class="qq">你的竞争壁垒，是「真壁垒」还是「伪壁垒」？</div>
+  <div class="dk"></div>
+  <div class="hh">「我们做得早」不是壁垒，「我们先积累了几百万用户」才是。你所谓的优势，是时间能磨平的，还是越用越强的？如果巨头明天全力进入，你手里的牌够不够打？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">185 / 300</span></div>
+  <div class="bn">185</div>
+  <div class="qq">你是在「对标」竞品，还是「错位」竞品？</div>
+  <div class="dk"></div>
+  <div class="hh">照着竞品抄功能，你永远追不上。聪明的做法是「错位竞争」：他们做大的，你做专的；他们做贵的，你做轻的。你的产品，和竞品在哪里「错开」了？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">186 / 300</span></div>
+  <div class="bn">186</div>
+  <div class="qq">竞争对手的「护城河」有多深？</div>
+  <div class="dk"></div>
+  <div class="hh">是品牌、是网络效应、是数据、是成本优势，还是技术专利？你打算在哪个维度上，挖一条比他们更深的沟？如果每条都比不过，你凭什么赢？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">187 / 300</span></div>
+  <div class="bn">187</div>
+  <div class="qq">你了解竞品的「商业模式」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">他们靠什么赚钱？卖产品、收订阅、抽佣金、还是赚广告？看懂竞品的商业模式，才能看懂他们的软肋和动作背后的逻辑。你的竞品，盈利模式是什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">188 / 300</span></div>
+  <div class="bn">188</div>
+  <div class="qq">竞品的「成本结构」比你低还是高？</div>
+  <div class="dk"></div>
+  <div class="hh">如果竞品的成本比你低很多，他就可以打价格战把你拖死。你算过你和竞品的成本差异吗？你的成本优势，或者劣势，在哪里？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">189 / 300</span></div>
+  <div class="bn">189</div>
+  <div class="qq">行业的「竞争烈度」有多大？</div>
+  <div class="dk"></div>
+  <div class="hh">是蓝海还是红海？是大家都在拼价格，还是各自安好？如果这个行业已经打到「你死我活」，你现在进去的胜算有多大？你有没有选一个竞争没那么惨烈的切入点？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">190 / 300</span></div>
+  <div class="bn">190</div>
+  <div class="qq">你的「替代品威胁」你算过吗？</div>
+  <div class="dk"></div>
+  <div class="hh">波特五力里的「替代品」，往往被忽视。你的产品，有没有可能被一个「跨界」的东西替代？比如做笔记的，被语音助手替代。你有没有想过，谁会「跨过来」打你？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">191 / 300</span></div>
+  <div class="bn">191</div>
+  <div class="qq">你对「上游供应商」有议价能力吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你的核心资源被一两家供应商卡着脖子，你的利润随时可能被吃掉。你的上游是谁？你对他们有多依赖？如果他们涨价，你受得了吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">192 / 300</span></div>
+  <div class="bn">192</div>
+  <div class="qq">你对「下游渠道」有议价能力吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你的获客全靠一两个平台，平台改个算法就能让你断粮。你的用户来源，是分散的还是高度集中的？你有没有被某个渠道「拿捏」的风险？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">193 / 300</span></div>
+  <div class="bn">193</div>
+  <div class="qq">新进入者的「门槛」有多高？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你的生意谁都能做，那很快就会有大量新玩家涌入。你的行业，进入门槛高吗？是靠资金、技术、牌照，还是靠关系和积累？门槛越低，你的好日子越短。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">194 / 300</span></div>
+  <div class="bn">194</div>
+  <div class="qq">你怕的「对手」，是现在的还是未来的？</div>
+  <div class="dk"></div>
+  <div class="hh">今天打不过的对手，可能明天自己就死了；今天看不见的对手，可能正在某个角落快速长大。你最该警惕的，是哪一个？你有没有盯着那些「非共识」的潜在威胁？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">195 / 300</span></div>
+  <div class="bn">195</div>
+  <div class="qq">竞争对手在「犯什么错」，你看得见吗？</div>
+  <div class="dk"></div>
+  <div class="hh">对手的错误就是你的机会。他们是不是傲慢了、动作慢了、忽略某类用户了？你能不能在对手的盲区里，找到自己的位置？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">196 / 300</span></div>
+  <div class="bn">196</div>
+  <div class="qq">你的「竞争情报」，是道听途说还是一手信息？</div>
+  <div class="dk"></div>
+  <div class="hh">从发布会、财报、招聘信息、用户吐槽里，你能挖出对手的真实动向。你有没有一个持续收集竞品信息的习惯？还是偶尔想起来才看一眼？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">197 / 300</span></div>
+  <div class="bn">197</div>
+  <div class="qq">你是在「打价格战」的思维里吗？</div>
+  <div class="dk"></div>
+  <div class="hh">价格战是下下策，杀敌一千自损八百。你有没有想过用「价值」而不是「价格」去竞争？你提供的哪些东西，是竞品降价也复制不了的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">198 / 300</span></div>
+  <div class="bn">198</div>
+  <div class="qq">你和竞品的「核心指标」对比过吗？</div>
+  <div class="dk"></div>
+  <div class="hh">留存率、转化率、客单价、复购率——这些核心指标，你和竞品比是高是低？如果你连竞品的核心数据都一无所知，说明你的竞争分析还停留在表面。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">199 / 300</span></div>
+  <div class="bn">199</div>
+  <div class="qq">你的「用户」会不会轻易跑到竞品那里？</div>
+  <div class="dk"></div>
+  <div class="hh">切换成本有多高？如果用户换到竞品，几乎零成本、零损失，那你的用户忠诚度就非常脆弱。你有没有在想办法，提高用户的「切换成本」？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">200 / 300</span></div>
+  <div class="bn">200</div>
+  <div class="qq">你在竞争的「赛道」选对了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">有时候打不过，不是因为你不够努力，是因为你站错了赛道。你有没有想过换一条更窄、更适合你的赛道？而不是在巨头的主场里硬碰硬。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">201 / 300</span></div>
+  <div class="bn">201</div>
+  <div class="qq">竞争对手「做得好的」，你有没有学会？</div>
+  <div class="dk"></div>
+  <div class="hh">光盯着对手的缺点，会让自己盲目乐观。对手做得好的地方，你有没有谦虚地研究、甚至借鉴？竞品是你的免费老师，你学到多少了？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">202 / 300</span></div>
+  <div class="bn">202</div>
+  <div class="qq">你的「差异化」，能不能被对手快速复制？</div>
+  <div class="dk"></div>
+  <div class="hh">如果一个功能对手三个月就能抄过去，那它就不算真正的差异化。你的优势，是需要时间积累、越积累越强的那种吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">203 / 300</span></div>
+  <div class="bn">203</div>
+  <div class="qq">行业里有没有「赢家通吃」的规律？</div>
+  <div class="dk"></div>
+  <div class="hh">有些行业是赢家通吃（平台、社交），有些是百花齐放（餐饮、教育）。你所在的行业，是哪种？如果是赢家通吃，你必须在早期抢到领先位置；否则，稳扎稳打就能活。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">204 / 300</span></div>
+  <div class="bn">204</div>
+  <div class="qq">你「怕不怕」巨头跨界来打你？</div>
+  <div class="dk"></div>
+  <div class="hh">巨头有资源、有流量、有品牌。如果巨头哪天决定做你做的事，你怎么办？你有没有选一个「巨头看不上」或者「巨头做不好」的角落？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">205 / 300</span></div>
+  <div class="bn">205</div>
+  <div class="qq">你的「竞争策略」，是进攻还是防守？</div>
+  <div class="dk"></div>
+  <div class="hh">你是在主动进攻、抢对手的市场，还是在防守、保住自己的份额？不同阶段策略不同。你现在的处境，该攻还是该守？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">206 / 300</span></div>
+  <div class="bn">206</div>
+  <div class="qq">你有没有「高估」或「低估」过对手？</div>
+  <div class="dk"></div>
+  <div class="hh">高估对手，会让自己畏手畏脚；低估对手，会让自己盲目送死。你上一次判断对手，是偏了哪个方向？这个判断，给你带来了什么后果？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">207 / 300</span></div>
+  <div class="bn">207</div>
+  <div class="qq">竞争到最后，你拼的到底是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">当功能、价格、体验都被拉到同一起跑线，最后拼的是什么？是团队的执行力、是创始人的认知、还是长期主义的耐心？你想清楚了这个问题的答案吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">208 / 300</span></div>
+  <div class="bn">208</div>
+  <div class="qq">你有没有一份「竞品对比表」？</div>
+  <div class="dk"></div>
+  <div class="hh">把竞品的功能、价格、用户量、优劣势，做成一张清晰的对比表，定期更新。这张表能让你一眼看清自己的位置和差距。你现在的竞品情报，是散落在脑子里，还是落成了一张能随时查阅的表格？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">竞争分析</span><span class="qn">209 / 300</span></div>
+  <div class="bn">209</div>
+  <div class="qq">你的对手，会不会「降价」把你拖死？</div>
+  <div class="dk"></div>
+  <div class="hh">如果对手资金雄厚，用「免费+补贴」把你拖入价格战，你撑得住吗？价格战是巨头的武器，小公司最怕。你有没有想过，一旦对手掀桌子打价格战，你的应对策略是什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">210 / 300</span></div>
+  <div class="bn">210</div>
+  <div class="fname">波特五力：看清行业竞争格局</div>
+  <div class="dk"></div>
+  <div class="fdesc">竞争不只在对手之间。用五力模型看清一个行业「好不好赚」，再决定要不要进去。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">现有竞争：行业内已有的对手，打得有多凶？</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">新进入者：别人进入这个行业的门槛有多高？</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">替代品：有没有跨界的方案能替代你？</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">供应商议价力：上游能不能卡你的脖子、抬你的价？</span></div>
+  <div class="fit"><span class="fno">5</span><span class="ftx">买方议价力：用户能不能轻易压你的价、换掉你？</span></div>
+  <div class="fnote">五力越强，行业越难赚。进去之前先问：这个行业是不是一个「好赚」的行业？如果五力全都很凶，换个行业比硬扛更聪明。</div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 08</div>
+  <div class="ct">战略与护城河</div>
+  <div class="cd">能赚钱的生意很多，能长期守住利润的很少。战略的本质，是选择一条别人抄不走的路。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 211 - 240</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">211 / 300</span></div>
+  <div class="bn">211</div>
+  <div class="qq">你的「护城河」到底是什么？能说清楚吗？</div>
+  <div class="dk"></div>
+  <div class="hh">别用「我们很优秀」搪塞。护城河是结构性的、别人难以复制的东西：网络效应、转换成本、无形资产、成本优势、规模效应。你的护城河属于哪一类？还是说，你其实没有护城河？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">212 / 300</span></div>
+  <div class="bn">212</div>
+  <div class="qq">你的生意，有没有「网络效应」？</div>
+  <div class="dk"></div>
+  <div class="hh">每多一个用户，产品对其他人是不是变得更有价值？微信、淘宝靠的是这个。如果没有网络效应，你凭什么阻止用户跑到更便宜的竞品那里去？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">213 / 300</span></div>
+  <div class="bn">213</div>
+  <div class="qq">用户的「转换成本」有多高？</div>
+  <div class="dk"></div>
+  <div class="hh">用户想离开你，要付出什么代价？数据、习惯、已投入的时间、重新学习？转换成本越高，护城河越深。你有没有在主动帮用户「沉淀」这些转换成本？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">214 / 300</span></div>
+  <div class="bn">214</div>
+  <div class="qq">你有没有「无形资产」的护城河？</div>
+  <div class="dk"></div>
+  <div class="hh">品牌、专利、牌照、独家授权——这些别人拿不走的东西，是最硬的护城河。你手里有哪些无形资产？它们真的能挡住对手吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">215 / 300</span></div>
+  <div class="bn">215</div>
+  <div class="qq">你的「成本优势」是结构性的吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果只是「我们更省钱」，对手也能省。真正的成本优势是结构性的：规模、技术、地理位置、独家供应。你的成本优势，别人能不能复制？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">216 / 300</span></div>
+  <div class="bn">216</div>
+  <div class="qq">你的战略，是「聚焦」还是「分散」？</div>
+  <div class="dk"></div>
+  <div class="hh">资源有限，什么都做等于什么都做不好。你的战略有没有一个清晰的重心？还是说，你同时在追好几个方向，哪个都舍不得放？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">217 / 300</span></div>
+  <div class="bn">217</div>
+  <div class="qq">你做的「取舍」，够狠吗？</div>
+  <div class="dk"></div>
+  <div class="hh">战略的本质是「不做什么」。你最近一次明确地说「这个我们不做」，是什么时候？如果你什么都舍不得放弃，你其实没有战略。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">218 / 300</span></div>
+  <div class="bn">218</div>
+  <div class="qq">你的护城河，是「今天就有」还是「以后才有」？</div>
+  <div class="dk"></div>
+  <div class="hh">很多创始人说的是「未来我们会有网络效应」。但护城河不是承诺，是现状。你今天能拿出来的、真实存在的护城河，是什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">219 / 300</span></div>
+  <div class="bn">219</div>
+  <div class="qq">你在「深耕」，还是在「广撒网」？</div>
+  <div class="dk"></div>
+  <div class="hh">在单一市场做到第一，比在十个市场做到第十，更有价值。你现在是在一个点上死磕，还是在很多点上蜻蜓点水？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">220 / 300</span></div>
+  <div class="bn">220</div>
+  <div class="qq">你的战略，经得起「压力测试」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果明天你最依赖的渠道没了、最大的客户走了、最核心的员工离职了，你的战略还成立吗？你有没有给自己做过最坏情况的推演？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">221 / 300</span></div>
+  <div class="bn">221</div>
+  <div class="qq">你是在「跟风战略」，还是「独立判断」？</div>
+  <div class="dk"></div>
+  <div class="hh">别人做会员，你也做会员；别人做私域，你也做私域。这些是「战术跟风」，不是战略。你的战略里，有多少是独立思考的、别人看不懂的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">222 / 300</span></div>
+  <div class="bn">222</div>
+  <div class="qq">你的「长期目标」，和「当下动作」对得上吗？</div>
+  <div class="dk"></div>
+  <div class="hh">你说五年后要做平台，现在却在接外包养活自己。短期动作和长期目标之间，有没有一条清晰的路径？还是说，你的长期目标只是挂在墙上的口号？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">223 / 300</span></div>
+  <div class="bn">223</div>
+  <div class="qq">你了解「时机」在战略里的分量吗？</div>
+  <div class="dk"></div>
+  <div class="hh">同样的战略，早一年是先烈，晚一年是炮灰。你对时机的判断，是基于什么？你有没有想过，为什么是现在这个时间点最适合你？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">224 / 300</span></div>
+  <div class="bn">224</div>
+  <div class="qq">你的战略，团队里每个人都能说清楚吗？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你问团队里随便一个人「我们公司的战略是什么」，他能答上来吗？如果只有创始人自己清楚战略，那这个战略就落不了地。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">225 / 300</span></div>
+  <div class="bn">225</div>
+  <div class="qq">你在「防御」，还是在「进攻」？</div>
+  <div class="dk"></div>
+  <div class="hh">守成和进攻需要完全不同的打法。你现在的阶段，是应该巩固已有的、还是开辟新的？你有没有判断错阶段，用防守的打法做进攻的事？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">226 / 300</span></div>
+  <div class="bn">226</div>
+  <div class="qq">你的护城河，会不会「自己漏水」？</div>
+  <div class="dk"></div>
+  <div class="hh">护城河不是一劳永逸的。技术变革、政策变化、用户迁移，都可能让护城河一夜干涸。你有没有定期审视，自己的护城河是不是正在变浅？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">227 / 300</span></div>
+  <div class="bn">227</div>
+  <div class="qq">你在做「大而全」，还是「小而深」？</div>
+  <div class="dk"></div>
+  <div class="hh">巨头做平台，你就做垂直；巨头做广度，你就做深度。你有没有选一个「巨头不屑做、但你做很深」的位置？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">228 / 300</span></div>
+  <div class="bn">228</div>
+  <div class="qq">你的「核心资源」，是不可替代的吗？</div>
+  <div class="dk"></div>
+  <div class="hh">你的核心资源是人、是技术、是数据，还是关系？如果这个资源明天没了，你的生意还能不能转？你有没有过度依赖某个单一资源？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">229 / 300</span></div>
+  <div class="bn">229</div>
+  <div class="qq">你是在「做正确的事」，还是「正确地做事」？</div>
+  <div class="dk"></div>
+  <div class="hh">战略是选方向（做正确的事），执行是把事做好（正确地做事）。方向错了，执行越好死得越快。你现在花最多时间想的，是方向还是执行？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">230 / 300</span></div>
+  <div class="bn">230</div>
+  <div class="qq">你的战略，有没有「反脆弱」的能力？</div>
+  <div class="dk"></div>
+  <div class="hh">好的战略，在波动和不确定性中反而受益。你的生意，是越折腾越强，还是稍微一波动就散架？你有没有给自己留出「抗风险」的冗余？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">231 / 300</span></div>
+  <div class="bn">231</div>
+  <div class="qq">你在「赚快钱」还是「建壁垒」？</div>
+  <div class="dk"></div>
+  <div class="hh">有些钱来得快，但赚完就没了；有些事短期不赚钱，但越做越值钱。你现在的选择，是在变现，还是在积累长期资产？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">232 / 300</span></div>
+  <div class="bn">232</div>
+  <div class="qq">你「all in」的地方，对吗？</div>
+  <div class="dk"></div>
+  <div class="hh">资源应该向最有可能建立壁垒的地方集中。你把最大的赌注，押在了哪个点上？这个点，真的是决定成败的关键吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">233 / 300</span></div>
+  <div class="bn">233</div>
+  <div class="qq">你的竞争对手，会不会「学习」你的战略？</div>
+  <div class="dk"></div>
+  <div class="hh">如果你的战略很容易被看懂、被模仿，那它就不是好战略。真正的好战略，即使对手看懂了，也学不会、做不到。你的战略，属于哪种？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">234 / 300</span></div>
+  <div class="bn">234</div>
+  <div class="qq">你有没有「战略的复盘」习惯？</div>
+  <div class="dk"></div>
+  <div class="hh">每隔一段时间，回头看看当初的战略判断对不对、要不要调整。你上一次认真复盘战略，是什么时候？还是说，你定了战略之后就再也没回头看过？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">235 / 300</span></div>
+  <div class="bn">235</div>
+  <div class="qq">你在「坚持」，还是在「固执」？</div>
+  <div class="dk"></div>
+  <div class="hh">坚持战略和固执己见，看起来很像。区别在于：坚持是基于不断验证后的笃定，固执是不管证据如何都死不回头。你现在是哪种？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">236 / 300</span></div>
+  <div class="bn">236</div>
+  <div class="qq">你的护城河，是「护自己」还是「护用户」？</div>
+  <div class="dk"></div>
+  <div class="hh">最好的护城河，其实是让用户离不开你。你有没有把心思花在「让用户的价值越来越大」上，而不是天天琢磨怎么防着对手？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">237 / 300</span></div>
+  <div class="bn">237</div>
+  <div class="qq">如果公司明天被收购，别人买的是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">这个问题的答案，就是你的核心价值。是技术、是用户、是数据、是团队，还是品牌？如果答案很模糊，说明你的积累还不够扎实。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">238 / 300</span></div>
+  <div class="bn">238</div>
+  <div class="qq">你的战略，是「长期主义」还是「机会主义」？</div>
+  <div class="dk"></div>
+  <div class="hh">长期主义是围绕一个不变的目标持续积累，机会主义是哪个风口来了就扑哪个。你现在的做法，是在「复利积累」，还是在「反复清零」？每一次换方向，你之前的积累还能不能用上？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">战略与护城河</span><span class="qn">239 / 300</span></div>
+  <div class="bn">239</div>
+  <div class="qq">你有没有「复利」的积累？</div>
+  <div class="dk"></div>
+  <div class="hh">有些事做了十年，还是从零开始（比如纯体力劳动）；有些事越做越值钱（比如品牌、用户、认知、数据）。你每天做的事，是在积累「会复利」的资产，还是在消耗「一次性」的精力？</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">240 / 300</span></div>
+  <div class="bn">240</div>
+  <div class="fname">七大护城河（7 Powers）</div>
+  <div class="dk"></div>
+  <div class="fdesc">Hamilton Helmer 提炼的七种战略力量，看看你的生意能建立哪一种、守住哪一种。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">规模经济：做得越大，单位成本越低，对手追不上。</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">网络效应：用户越多，产品越值钱，形成自我强化。</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">转换成本：用户一旦进来，离开的代价太高。</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">品牌：信任和溢价，让用户愿意为「你」多付钱。</span></div>
+  <div class="fit"><span class="fno">5</span><span class="ftx">垄断资源：专利、牌照、独家授权，别人拿不到。</span></div>
+  <div class="fit"><span class="fno">6</span><span class="ftx">流程优势：独一无二的组织能力，抄不走。</span></div>
+  <div class="fit"><span class="fno">7</span><span class="ftx">位置锁定：占住关键入口，后来者绕不过去。</span></div>
+  <div class="fnote">七种力量，能建立一两种并守住的，就是好生意。什么护城河都没有的生意，赚的是辛苦钱，随时会被后来者掀翻。</div>
+</div>
+<div class="page ce">
+  <div class="cs">*</div>
+  <div class="ct">你已经完成了<br>240 张卡片</div>
+  <div class="cx">
+    <p>产品做出来只是开始，</p>
+    <p>让它在真实的用户手里成长，</p>
+    <p>才是真正的考验。</p>
+  </div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 09</div>
+  <div class="ct">商业模式与定价</div>
+  <div class="cd">产品有人用，不等于能赚钱。商业模式回答「钱从哪来」，定价回答「用户愿意掏多少」。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 241 - 255</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">241 / 300</span></div>
+  <div class="bn">241</div>
+  <div class="qq">你的商业模式，能用一句话说清楚吗？</div>
+  <div class="dk"></div>
+  <div class="hh">「我们从谁那里、用什么方式、赚什么钱」——一句话说清楚。如果连创始人都要解释半天，用户和投资人也听不懂。你的钱，到底是从哪里流进来的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">242 / 300</span></div>
+  <div class="bn">242</div>
+  <div class="qq">谁为你付费？谁使用？谁受益？这三者一致吗？</div>
+  <div class="dk"></div>
+  <div class="hh">有些产品使用者不付费，付费者不使用（比如家长买单孩子用）。你的付费方是谁？他为什么愿意付？如果使用者和付费者不是同一人，你分别满足了他们什么？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">243 / 300</span></div>
+  <div class="bn">243</div>
+  <div class="qq">你的收入来源，是「单一」还是「多元」？</div>
+  <div class="dk"></div>
+  <div class="hh">只靠一种收入，风险太高。你有没有想过第二条、第三条收入曲线？但多元化也要警惕，早期过度多元化会稀释精力。你现在的收入结构，健康吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">244 / 300</span></div>
+  <div class="bn">244</div>
+  <div class="qq">你的定价，是「拍脑袋」还是「有逻辑」？</div>
+  <div class="dk"></div>
+  <div class="hh">定价不能靠感觉。你用的是成本定价、价值定价、竞争定价，还是别的？你的价格，和用户感知到的价值，匹配吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">245 / 300</span></div>
+  <div class="bn">245</div>
+  <div class="qq">你的定价，测试过吗？</div>
+  <div class="dk"></div>
+  <div class="hh">9.9 和 19.9，转化率可能差很多；99 和 199，利润可能天差地别。你有没有系统地测过不同价格点的反应？还是定了一个价就再也没动过？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">246 / 300</span></div>
+  <div class="bn">246</div>
+  <div class="qq">你的单位经济模型，算得过来吗？</div>
+  <div class="dk"></div>
+  <div class="hh">每卖出一单，你能赚多少？获客成本（CAC）和客户终身价值（LTV）的比例，是健康的吗？如果 LTV 连 CAC 都覆盖不了，你就是在烧钱买增长。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">247 / 300</span></div>
+  <div class="bn">247</div>
+  <div class="qq">你的毛利率是多少？</div>
+  <div class="dk"></div>
+  <div class="hh">毛利率决定了你有没有钱做研发、做营销、养团队。你的毛利率健康吗？如果毛利率太低，你的生意本质上是「搬运」，赚的是辛苦钱。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">248 / 300</span></div>
+  <div class="bn">248</div>
+  <div class="qq">你收的是「一次性」，还是「持续订阅」？</div>
+  <div class="dk"></div>
+  <div class="hh">订阅模式带来可预测的现金流，但要求你持续提供价值。一次性收入来得快，但永远在找新客户。你的模式，适合你的产品形态吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">249 / 300</span></div>
+  <div class="bn">249</div>
+  <div class="qq">你的「成本结构」里，最大的一块是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">是人力、是流量、是服务器，还是原材料？搞清楚成本大头，才能知道该优化哪里。你有没有算过，钱都花到哪去了？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">250 / 300</span></div>
+  <div class="bn">250</div>
+  <div class="qq">你的商业模式，会不会「越做越亏」？</div>
+  <div class="dk"></div>
+  <div class="hh">有些生意规模越大，成本也线性增长，甚至边际成本不降反升。你的生意，是规模越大越赚钱，还是规模越大越累？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">251 / 300</span></div>
+  <div class="bn">251</div>
+  <div class="qq">你的「付费点」设计在哪里？</div>
+  <div class="dk"></div>
+  <div class="hh">免费提供什么、哪里开始收费、收费的形式是什么？用户会在哪个瞬间愿意掏钱？你的付费墙，是设计过的，还是随便放的？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">252 / 300</span></div>
+  <div class="bn">252</div>
+  <div class="qq">你了解客户「终身价值」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">一个客户，从来到走，总共能给你贡献多少收入？你有没有算过这个数字？如果算不清，你就不知道能花多少钱去获取一个客户。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">253 / 300</span></div>
+  <div class="bn">253</div>
+  <div class="qq">你的「退款率」和「流失率」是多少？</div>
+  <div class="dk"></div>
+  <div class="hh">退款和流失，是商业模式健康度的晴雨表。你的用户用了多久会走？为什么会走？你有没有盯着这两个数字，而不是只盯着新增？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">商业模式与定价</span><span class="qn">254 / 300</span></div>
+  <div class="bn">254</div>
+  <div class="qq">你的定价，有没有「锚点」？</div>
+  <div class="dk"></div>
+  <div class="hh">人们判断贵不贵，是相对的。你有没有设计价格锚点（比如一个贵的版本，衬托出主推版本「划算」）？你的价格梯队，设计合理吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">255 / 300</span></div>
+  <div class="bn">255</div>
+  <div class="fname">商业模式画布（9 格）</div>
+  <div class="dk"></div>
+  <div class="fdesc">用一张图拆解你的生意，任何一格想不清楚，商业模式都可能有漏洞。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">价值主张：你为用户解决什么问题、创造什么价值？</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">客户细分：你服务谁？谁是最重要的客户？</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">渠道：你通过什么路径触达和交付客户？</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">客户关系：你和客户维持什么样的关系？</span></div>
+  <div class="fit"><span class="fno">5</span><span class="ftx">收入来源：客户为什么付费？怎么付？</span></div>
+  <div class="fit"><span class="fno">6</span><span class="ftx">核心资源：你靠什么关键资源运转？</span></div>
+  <div class="fit"><span class="fno">7</span><span class="ftx">关键活动：你必须做好哪些关键动作？</span></div>
+  <div class="fit"><span class="fno">8</span><span class="ftx">关键伙伴：谁是你的关键供应商和合作方？</span></div>
+  <div class="fit"><span class="fno">9</span><span class="ftx">成本结构：钱花在哪里？成本大头是什么？</span></div>
+  <div class="fnote">九格是联动的：改了价值主张，客户细分和收入来源都要跟着动。别把它填成一张静态表，要当成会呼吸的系统。</div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 10</div>
+  <div class="ct">增长与营销</div>
+  <div class="cd">产品做好了，要让对的人知道、用上、留下。增长不是砸钱，是一套可以复制的系统。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 256 - 270</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">256 / 300</span></div>
+  <div class="bn">256</div>
+  <div class="qq">你的「增长引擎」是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">增长不能靠运气和一次性活动。你的增长，是付费获客、内容营销、病毒传播、还是渠道分销？哪一个是你的主引擎，能持续转动的那种？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">257 / 300</span></div>
+  <div class="bn">257</div>
+  <div class="qq">你的获客成本（CAC）算过吗？</div>
+  <div class="dk"></div>
+  <div class="hh">每获取一个用户，你花多少钱？如果这个数字你不知道，你就是在闭着眼睛花钱。你现在的 CAC 是多少？它和你的客户价值比，健康吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">258 / 300</span></div>
+  <div class="bn">258</div>
+  <div class="qq">你的用户，是「来了就走」还是「来了留下」？</div>
+  <div class="dk"></div>
+  <div class="hh">只关注新增、不关注留存，是最常见的增长误区。你的次日留存、周留存、月留存分别是多少？如果留存很差，你砸再多钱获客也是漏水的桶。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">259 / 300</span></div>
+  <div class="bn">259</div>
+  <div class="qq">你的「啊哈时刻」到得够快吗？</div>
+  <div class="dk"></div>
+  <div class="hh">用户从第一次使用，到体验到核心价值，要多久？越快，留存越好。你有没有想办法缩短这个「价值时延」？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">260 / 300</span></div>
+  <div class="bn">260</div>
+  <div class="qq">你的产品，有没有「自传播」的基因？</div>
+  <div class="dk"></div>
+  <div class="hh">用户会不会主动把你的产品分享给别人？是产品里设计了分享的钩子，还是纯靠用户自觉？你的病毒系数是多少？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">261 / 300</span></div>
+  <div class="bn">261</div>
+  <div class="qq">你在「做营销」，还是在「做品牌」？</div>
+  <div class="dk"></div>
+  <div class="hh">营销是短期转化，品牌是长期信任。只做营销，用户会把你当一次性工具；有了品牌，用户才会在需要时第一个想起你。你这两者，偏废了哪一个？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">262 / 300</span></div>
+  <div class="bn">262</div>
+  <div class="qq">你的「内容」，是在创造价值还是制造噪音？</div>
+  <div class="dk"></div>
+  <div class="hh">内容是增长的杠杆，但前提是内容本身有价值。你发的内容，用户是「看完有收获」，还是「划过去就忘」？你有没有用内容真正帮到过你的用户？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">263 / 300</span></div>
+  <div class="bn">263</div>
+  <div class="qq">你了解你的「核心渠道」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">别每个平台都铺一点，哪个都没做深。你最能打通的渠道是哪一个？你有没有在那个渠道上做到极致，而不是蜻蜓点水地撒网？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">264 / 300</span></div>
+  <div class="bn">264</div>
+  <div class="qq">你的增长，是「可持续」还是「透支」？</div>
+  <div class="dk"></div>
+  <div class="hh">靠补贴拉来的用户，补贴一停就散；靠内容吸引的用户，会越攒越多。你的增长方式，是短期透支，还是长期积累？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">265 / 300</span></div>
+  <div class="bn">265</div>
+  <div class="qq">你有没有「激活」用户的流程？</div>
+  <div class="dk"></div>
+  <div class="hh">注册了不等于激活了。你有没有一套 onboarding（新手引导）流程，把新用户一步步带到「啊哈时刻」？还是注册完就不管了？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">266 / 300</span></div>
+  <div class="bn">266</div>
+  <div class="qq">你的「流失用户」，你挽回过吗？</div>
+  <div class="dk"></div>
+  <div class="hh">老用户流失，比新用户获取贵得多。你有没有针对流失用户做召回？有没有分析他们为什么走，然后针对性改进？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">267 / 300</span></div>
+  <div class="bn">267</div>
+  <div class="qq">你的增长团队，是「数据驱动」还是「拍脑袋」？</div>
+  <div class="dk"></div>
+  <div class="hh">每次增长决策，是基于数据，还是基于「我觉得」？你有没有 A/B 测试的习惯，让数据告诉你哪个方案更有效？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">268 / 300</span></div>
+  <div class="bn">268</div>
+  <div class="qq">你在「追流量」，还是在「养信任」？</div>
+  <div class="dk"></div>
+  <div class="hh">流量来了就走，信任建立了就留。你是在追热点、蹭流量，还是在持续输出价值、积累信任？哪个才是你长期该做的事？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">增长与营销</span><span class="qn">269 / 300</span></div>
+  <div class="bn">269</div>
+  <div class="qq">你的增长，有没有「北极星指标」？</div>
+  <div class="dk"></div>
+  <div class="hh">整个团队都盯着的那个唯一关键指标，是什么？是活跃、是留存、是收入，还是别的？如果没有一个统一的北极星指标，团队的努力就会分散。</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">270 / 300</span></div>
+  <div class="bn">270</div>
+  <div class="fname">AARRR 增长漏斗</div>
+  <div class="dk"></div>
+  <div class="fdesc">海盗模型，把增长拆成五步，逐层看哪里漏水，逐层优化。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">Acquisition 获取：用户从哪里来？（渠道、成本、质量）</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">Activation 激活：用户第一次体验到价值了吗？</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">Retention 留存：用户会回来吗？（最重要，也最难）</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">Revenue 收入：用户如何变成收入？</span></div>
+  <div class="fit"><span class="fno">5</span><span class="ftx">Referral 推荐：用户会推荐给朋友吗？</span></div>
+  <div class="fnote">漏斗是倒三角，越往下越窄。别只盯着最上面的「获取」，多看看下面几层的漏水。留存做不好，前面的一切都是白忙。</div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 11</div>
+  <div class="ct">团队与融资</div>
+  <div class="cd">一个人走得快，一群人走得远。团队决定了你能走多远，钱决定了你能撑多久。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 271 - 285</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">271 / 300</span></div>
+  <div class="bn">271</div>
+  <div class="qq">你的「联合创始人」选对了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">联合创始人是最难退出的决定。你找合伙人，是因为「能力互补」，还是因为「一个人怕孤单」？你们对公司的愿景、价值观、退出机制，达成一致了吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">272 / 300</span></div>
+  <div class="bn">272</div>
+  <div class="qq">你们「股权分配」的依据是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">股权是照「贡献」分，还是照「谁先提的」分？有没有考虑未来的期权池？如果一开始股权就分得不公平，后面会有无穷无尽的矛盾。你的股权结构，经得起创业的长期考验吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">273 / 300</span></div>
+  <div class="bn">273</div>
+  <div class="qq">你「招人」的标准是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">是「能用就行」，还是「宁缺毋滥」？创业早期，一个人顶三个人用，招错一个人的代价是巨大的。你招人时，最看重的是什么？能力、态度、还是价值观匹配？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">274 / 300</span></div>
+  <div class="bn">274</div>
+  <div class="qq">你的团队，是「招来的」还是「长出来的」？</div>
+  <div class="dk"></div>
+  <div class="hh">空降高管和内部培养，各有利弊。你的核心团队，是慢慢培养起来的，还是高薪挖来的？挖来的人，能融入你的文化吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">275 / 300</span></div>
+  <div class="bn">275</div>
+  <div class="qq">你了解「人对了，事才成」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">很多项目失败，不是因为方向错，是因为人不对。你有没有因为「舍不得」而留着一个明显不合适的人？这种「将就」，最后会让你付出更大的代价。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">276 / 300</span></div>
+  <div class="bn">276</div>
+  <div class="qq">你的「企业文化」，是真实存在的还是口号？</div>
+  <div class="dk"></div>
+  <div class="hh">墙上贴的价值观，和团队实际做的事，是一回事吗？文化不是写出来的，是做出来的。你的团队，在没有你的情况下，会按照你期望的方式做事吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">277 / 300</span></div>
+  <div class="bn">277</div>
+  <div class="qq">你「放权」了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">创始人什么都管，团队就什么都等你。你有没有学会授权，让团队能独立决策、独立担责？还是说，你还在事无巨细地盯着一线？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">278 / 300</span></div>
+  <div class="bn">278</div>
+  <div class="qq">你的团队，有「心理安全感」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">团队成员敢不敢说真话、报坏消息、提反对意见？如果一个团队里没人敢说「这不行」，那问题会被掩盖到爆发。你营造了让人敢说真话的环境吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">279 / 300</span></div>
+  <div class="bn">279</div>
+  <div class="qq">你「激励」团队的方式，对吗？</div>
+  <div class="dk"></div>
+  <div class="hh">激励不只是钱。成长空间、认可、意义感，都可能比钱更重要。你了解你的核心成员，真正在乎的是什么吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">280 / 300</span></div>
+  <div class="bn">280</div>
+  <div class="qq">你真的需要融资吗？还是「融了再说」？</div>
+  <div class="dk"></div>
+  <div class="hh">融资不是目的，是手段。你拿钱是为了什么？是加速增长，还是因为钱快烧完了？如果商业模式本身不成立，融再多钱也只是推迟死亡。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">281 / 300</span></div>
+  <div class="bn">281</div>
+  <div class="qq">你了解融资的「代价」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">融资换来的是钱，让出去的是股权和控制权。你算过这笔账吗？你愿意为了这笔钱，放弃多少公司的话语权？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">282 / 300</span></div>
+  <div class="bn">282</div>
+  <div class="qq">你的「现金流」还能撑多久？</div>
+  <div class="dk"></div>
+  <div class="hh">现金流是企业的氧气。你现在账上的钱，按照当前的烧钱速度，还能撑几个月？你有没有提前规划融资节奏，而不是等到快没钱了才慌？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">283 / 300</span></div>
+  <div class="bn">283</div>
+  <div class="qq">你的「跑道」（Runway）有多长？</div>
+  <div class="dk"></div>
+  <div class="hh">跑道 = 现金 ÷ 月净支出。你知道自己的跑道还剩几个月吗？如果跑道不足六个月，你打算怎么办？是加速融资，还是收缩开支？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">团队与融资</span><span class="qn">284 / 300</span></div>
+  <div class="bn">284</div>
+  <div class="qq">你「讲故事」的能力，够不够融资用？</div>
+  <div class="dk"></div>
+  <div class="hh">融资本质上是在卖「未来」。你能不能在三分钟里，讲清楚你的愿景、市场、产品、团队、为什么现在、为什么是你？你的融资故事，练熟了吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">285 / 300</span></div>
+  <div class="bn">285</div>
+  <div class="fname">融资轮次地图</div>
+  <div class="dk"></div>
+  <div class="fdesc">不同阶段，融的钱、证明的事、面临的考核都不一样。认清自己在哪个阶段，别用错姿势。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">种子轮：证明「想法可行」，靠团队和愿景，金额小、估值低。</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">天使轮：证明「初步验证」，有早期数据或付费用户，靠信任。</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">A 轮：证明「模型跑通」，有可复制的增长和商业模式。</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">B/C 轮：证明「可以规模化」，快速扩张、抢占市场。</span></div>
+  <div class="fit"><span class="fno">5</span><span class="ftx">后期/IPO：证明「能持续盈利」，走向上市或并购退出。</span></div>
+  <div class="fnote">每一轮都在为下一轮「储备证据」。融早了稀释多，融晚了可能断粮。节奏感，是创始人融资最重要的能力。</div>
+</div>
+<div class="page ch">
+  <div class="ci">CHAPTER 12</div>
+  <div class="ct">财务、风险与退出</div>
+  <div class="cd">创业的终局，是让生意活得久、走得远。财务是命脉，风险是暗礁，退出是另一种开始。</div>
+  <div class="cc">-- * --</div>
+  <div class="cr">卡 286 - 300</div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">286 / 300</span></div>
+  <div class="bn">286</div>
+  <div class="qq">你的账，是自己管，还是「凭感觉」？</div>
+  <div class="dk"></div>
+  <div class="hh">很多创始人连自己的现金流都不清楚。你每个月能说出「收入多少、支出多少、账上还剩多少」吗？如果说不清，你的公司在财务上就是裸奔。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">287 / 300</span></div>
+  <div class="bn">287</div>
+  <div class="qq">你的「现金流」和「利润」分得清吗？</div>
+  <div class="dk"></div>
+  <div class="hh">有利润不等于有现金，很多公司死于「赚钱但没现金」。你有没有遇到过「账上有利润、手里没钱发工资」的情况？你分得清这两者的区别吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">288 / 300</span></div>
+  <div class="bn">288</div>
+  <div class="qq">你的「烧钱速度」是可控的吗？</div>
+  <div class="dk"></div>
+  <div class="hh">你知道自己每个月净流出多少钱吗？这个数字是你在掌控的，还是失控的？你有没有定期复盘，哪些钱该花、哪些钱在浪费？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">289 / 300</span></div>
+  <div class="bn">289</div>
+  <div class="qq">你有没有「法律合规」的隐患？</div>
+  <div class="dk"></div>
+  <div class="hh">股权协议、劳动合同、知识产权、数据隐私、税务——这些地方埋的雷，可能会在融资或上市时爆掉。你扫过自己的「合规清单」吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">290 / 300</span></div>
+  <div class="bn">290</div>
+  <div class="qq">你的「知识产权」保护了吗？</div>
+  <div class="dk"></div>
+  <div class="hh">商标注册了吗？核心代码和设计，会不会被员工带走？你有没有和关键员工签竞业和保密协议？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">291 / 300</span></div>
+  <div class="bn">291</div>
+  <div class="qq">你最害怕的「风险」，是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">是政策变化、是大客户流失、是核心员工出走，还是资金链断裂？你有没有把这些风险列出来，逐一评估概率和影响，并准备好预案？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">292 / 300</span></div>
+  <div class="bn">292</div>
+  <div class="qq">你的「单一依赖」风险有多大？</div>
+  <div class="dk"></div>
+  <div class="hh">如果公司 80% 的收入来自一个大客户、一个渠道、一个供应商，你就是在走钢丝。你有没有在主动分散这种依赖？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">293 / 300</span></div>
+  <div class="bn">293</div>
+  <div class="qq">你有没有「Plan B」？</div>
+  <div class="dk"></div>
+  <div class="hh">如果主线走不通，你的备选方案是什么？是转型、是收缩、是被收购，还是体面地关门？你给自己留后路了吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">294 / 300</span></div>
+  <div class="bn">294</div>
+  <div class="qq">你「止损」的底线在哪里？</div>
+  <div class="dk"></div>
+  <div class="hh">创业要有坚持，也要有止损。你给自己设的止损线是什么？是烧到多少钱、坚持到什么时候、还是数据差到什么程度？到了线，你敢果断退出吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">295 / 300</span></div>
+  <div class="bn">295</div>
+  <div class="qq">你考虑过「退出」吗？</div>
+  <div class="dk"></div>
+  <div class="hh">创业的终点不一定是 IPO。并购、被收购、卖给合伙人、甚至关门，都是可能的退出。你理想的退出方式是什么？你有没有从一开始就为这个终局做准备？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">296 / 300</span></div>
+  <div class="bn">296</div>
+  <div class="qq">你的公司「值多少钱」，你心里有数吗？</div>
+  <div class="dk"></div>
+  <div class="hh">不管现在融不融资，你该知道自己的公司大概值多少。估值不是凭空喊的，是基于收入、增长、市场、团队的综合判断。你的估值逻辑，站得住吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">297 / 300</span></div>
+  <div class="bn">297</div>
+  <div class="qq">你是在「做一门生意」，还是「赌一把」？</div>
+  <div class="dk"></div>
+  <div class="hh">做生意讲究可持续、可计算；赌一把讲究下注、博暴富。你现在的心态，是在经营一门生意，还是在赌一个机会？这两种心态，会导向完全不同的决策。</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">298 / 300</span></div>
+  <div class="bn">298</div>
+  <div class="qq">你「赚到钱」和「活下来」哪个优先？</div>
+  <div class="dk"></div>
+  <div class="hh">早期活下来最重要，别为了追增长而把命脉掐断。你是选择烧钱换增长，还是先保住现金流、稳步赚钱？你的选择，和你的阶段匹配吗？</div>
+  <div class="qa"></div>
+</div>
+<div class="page qc">
+  <div class="qh"><span class="qt">财务、风险与退出</span><span class="qn">299 / 300</span></div>
+  <div class="bn">299</div>
+  <div class="qq">创业到最后，你「留下」的是什么？</div>
+  <div class="dk"></div>
+  <div class="hh">是钱、是公司、是团队、是品牌，还是一套方法论？回望这段创业，你最想留下来的「资产」是什么？这个问题的答案，会倒过来影响你今天的每一个决策。</div>
+  <div class="qa"></div>
+</div>
+<div class="page fw">
+  <div class="qh"><span class="qt">工具 · 框架</span><span class="qn">300 / 300</span></div>
+  <div class="bn">300</div>
+  <div class="fname">单位经济学：LTV / CAC</div>
+  <div class="dk"></div>
+  <div class="fdesc">判断生意能不能持续的两个核心数字，一个算「能赚多少」，一个算「花多少换来」。</div>
+  <div class="fit"><span class="fno">1</span><span class="ftx">LTV 客户终身价值：一个客户从来到走，总共贡献的利润。</span></div>
+  <div class="fit"><span class="fno">2</span><span class="ftx">CAC 获客成本：获取一个新客户，平均要花多少钱。</span></div>
+  <div class="fit"><span class="fno">3</span><span class="ftx">黄金比例：LTV / CAC 大于 3，才是健康的生意。</span></div>
+  <div class="fit"><span class="fno">4</span><span class="ftx">回收期：花出去的获客成本，多久能赚回来（越短越好）。</span></div>
+  <div class="fnote">LTV/CAC 小于 1，说明每获取一个客户都在亏钱，规模越大亏越多。先把这个比例做正，再谈增长。</div>
+</div>
+<div class="page end-page">
+  <h3>决策不是终点，是起点。</h3>
+  <p class="bt">你写下的每一个判断、每一次追问、每一个犹豫，都是你作为创业者和管理者的肌肉记忆。</p>
+  <p class="bt">商业模式会过时，产品会被替代，但判断力——那个在信息不完整时依然敢拍板、敢承担后果的能力——不会被替代。</p>
+  <div class="dv"></div>
+  <p class="bt">市场永远在变，唯一不变的是你对问题本身的思考深度。</p>
+  <div class="pull">创业最稀缺的，不是资源，是判断力。</div>
+  <p class="close">愿你永远问得出那个最狠的问题。</p>
+  <div class="ft">卡片创作实验室 出品</div>
+</div>
+</body>
+</html>
